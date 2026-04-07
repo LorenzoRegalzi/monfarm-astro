@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const esperienze = [
+  {
+    date: 'OTTOBRE 2025',
+    title: 'Evento Pilota: Le Radici',
+    location: 'Tenuta San Rocco',
+    city: 'Conzano Monferrato (AL)',
+    description:
+      'Il nostro primo incontro, dove la visione ha preso forma. Due giorni immersi nei caldi colori autunnali per gettare i semi della community MonFarm, tra lentezza e prime pratiche condivise.',
+    image: '/images/esperienze/le-radici.jpg',
+    imageAlt: "Gruppo di persone in cerchio al tramonto durante l'Evento Pilota Le Radici",
+    instagramUrl: 'https://www.instagram.com/monfarmexperience',
+    isPast: true,
+  },
+  {
+    date: 'DICEMBRE 2025',
+    title: 'Rituale d\'Inverno: la Luce che rinasce.',
+    location: 'Belvedere Monferrato',
+    city: 'Vignale Monferrato (AL)',
+    description:
+      'Un tempo per fermarsi e accogliere il silenzio della stagione fredda. Abbiamo condiviso pratiche introspettive e calore attorno al fuoco, per ritrovare la centratura prima del nuovo anno.',
+    image: '/images/esperienze/rituale-inverno.jpg',
+    imageAlt: 'Candela e oggetti sul pavimento durante il Rituale d\'Inverno a Belvedere Monferrato',
+    instagramUrl: 'https://www.instagram.com/monfarmexperience',
+    isPast: true,
+  },
+  {
+    date: 'APRILE 2026',
+    title: 'Risveglio e Fioritura',
+    location: 'La Corte Delle 4 Stagioni',
+    city: 'Ozzano Monferrato (AL)',
+    description:
+      "Un'esperienza immersiva nella natura pensata per rallentare, ascoltarsi e lasciare emergere nuove energie. Tra pratiche dolci, condivisione e presenza, \"Risveglio e Fioritura\" è uno spazio protetto in cui concedersi tempo e trasformazione.",
+    image: '/images/esperienze/risveglio-fioritura.jpg',
+    imageAlt: "La Corte Delle 4 Stagioni — Ozzano Monferrato, sede dell'esperienza Risveglio e Fioritura",
+    instagramUrl: 'https://www.instagram.com/monfarmexperience',
+    isPast: false,
+  },
+];
+---
+
+<Layout
+  title="Esperienze"
+  description="Le esperienze MonFarm: ritiri immersi nella natura del Monferrato. Le Radici, Rituale d'Inverno, Risveglio e Fioritura."
+>
+
+  <PageHeader title="Esperienze" />
+
+  <!-- ===== EXPERIENCES LIST ===== -->
+  <section class="section esperienze-list">
+    <div class="container">
+
+      {esperienze.map((exp) => (
+        <article class="exp-card">
+
+          <!-- Full-width photo -->
+          <div class="exp-card__image-wrap">
+            <img
+              src={exp.image}
+              alt={exp.imageAlt}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <!-- Body -->
+          <div class="exp-card__body">
+            <div class="exp-card__accent-bar"></div>
+            <p class="exp-card__date"><em>{exp.date}</em></p>
+            <h2 class="exp-card__title">"{exp.title}"</h2>
+            <p class="exp-card__venue">{exp.location}</p>
+            <p class="exp-card__city">{exp.city}</p>
+            <p class="exp-card__desc">{exp.description}</p>
+            <div class="exp-card__cta-wrap">
+              <a
+                href={exp.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+                aria-label={`Scopri com'è andata ${exp.title} — si apre in una nuova scheda`}
+              >
+                Scopri com'è andata
+              </a>
+            </div>
+          </div>
+
+        </article>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- ===== INSTAGRAM DIARY ===== -->
+  <section class="diary-section">
+    <div class="container diary-section__inner">
+      <p class="diary-section__text">
+        <em>Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.</em>
+      </p>
+      <a
+        href="https://www.instagram.com/monfarmexperience"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--outline diary-section__btn"
+        aria-label="Visita il nostro profilo Instagram — si apre in una nuova scheda"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        @monfarmexperience
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* ---- List ---- */
+.esperienze-list {
+  padding-top: var(--space-lg);
+}
+
+.exp-card {
+  margin-bottom: var(--space-2xl);
+}
+
+/* ---- Image ---- */
+.exp-card__image-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.exp-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.exp-card:hover .exp-card__image-wrap img {
+  transform: scale(1.02);
+}
+
+/* ---- Body ---- */
+.exp-card__body {
+  background-color: var(--color-cream);
+  padding: var(--space-lg);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-card__accent-bar {
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-olive);
+  margin-bottom: var(--space-xs);
+}
+
+.exp-card__date {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-brown);
+}
+
+.exp-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 5vw, 1.9rem);
+  font-weight: 700;
+  color: var(--color-brown);
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+}
+
+.exp-card__venue {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.exp-card__city {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.exp-card__desc {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+  margin-top: var(--space-sm);
+}
+
+.exp-card__cta-wrap {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Diary / Instagram CTA ---- */
+.diary-section {
+  background-color: var(--color-cream);
+  padding-block: var(--space-xl);
+}
+
+.diary-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.diary-section__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: var(--color-brown);
+  max-width: 400px;
+}
+
+.diary-section__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+</style>

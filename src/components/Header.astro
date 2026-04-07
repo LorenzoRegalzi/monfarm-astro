@@ -1,0 +1,246 @@
+---
+const navItems = [
+  { label: 'Home',              href: '/' },
+  { label: 'Il Format',         href: '/il-format' },
+  { label: 'A Chi È Rivolto',   href: '/a-chi-e-rivolto' },
+  { label: 'Esperienze',        href: '/esperienze' },
+  { label: 'Collabora',         href: '/collabora' },
+];
+---
+
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Burger button — sinistra -->
+    <button
+      class="header__burger"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Apri menu"
+    >
+      <span class="header__burger-bar"></span>
+      <span class="header__burger-bar"></span>
+      <span class="header__burger-bar"></span>
+    </button>
+
+    <!-- Logo — centro -->
+    <a href="/" class="header__logo" aria-label="MonFarm Experience — torna alla home">
+      <img
+        src="/images/logo.svg"
+        alt="MonFarm Experience"
+        width="140"
+        height="60"
+        loading="eager"
+      />
+    </a>
+
+    <!-- Spacer per bilanciare il burger -->
+    <div class="header__spacer" aria-hidden="true"></div>
+
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione" hidden>
+  <div class="mobile-menu__inner">
+
+    <div class="mobile-menu__top">
+      <a href="/" class="mobile-menu__logo">
+        <img src="/images/logo.svg" alt="MonFarm Experience" width="140" height="60" />
+      </a>
+      <button class="mobile-menu__close" aria-label="Chiudi menu">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="10" y1="10" x2="22" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22" y1="10" x2="10" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav aria-label="Navigazione mobile">
+      <ul class="mobile-menu__list" role="list">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href} class="mobile-menu__link">{item.label.toUpperCase()}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Freccia decorativa -->
+    <svg class="mobile-menu__chevron" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 5 L30 28 L55 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 18 L30 41 L55 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <a href="/contatti" class="btn btn--primary mobile-menu__cta">Contattaci</a>
+
+  </div>
+</div>
+
+<style>
+/* ---- Header ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-cream-bg);
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Burger — sinistra */
+.header__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.header__burger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-brown);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Logo — centro */
+.header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header__logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* Spacer invisibile che bilancia il burger a destra */
+.header__spacer {
+  width: 36px;
+  flex-shrink: 0;
+}
+
+/* ---- Mobile menu overlay ---- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: var(--color-cream-bg);
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu[hidden] { display: none; }
+
+.mobile-menu__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-md);
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.mobile-menu__logo img {
+  height: 52px;
+  width: auto;
+}
+
+.mobile-menu__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-olive);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobile-menu__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.mobile-menu__link {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--color-brown);
+  text-decoration: none;
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--color-cream);
+  transition: color var(--transition);
+}
+.mobile-menu__link:hover { color: var(--color-olive); }
+
+.mobile-menu__chevron {
+  width: 44px;
+  height: 30px;
+  color: var(--color-olive);
+  opacity: 0.45;
+  margin: var(--space-lg) auto var(--space-sm);
+}
+
+.mobile-menu__cta {
+  display: block;
+  text-align: center;
+}
+</style>
+
+<script>
+  const burger   = document.querySelector('.header__burger') as HTMLButtonElement;
+  const closeBtn = document.querySelector('.mobile-menu__close') as HTMLButtonElement;
+  const menu     = document.getElementById('mobile-menu') as HTMLElement;
+
+  function openMenu() {
+    menu.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeMenu() {
+    menu.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus();
+  }
+
+  burger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.hidden) closeMenu();
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

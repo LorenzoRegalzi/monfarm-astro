@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<section class="page-header">
+  <div class="container page-header__inner">
+    <div class="page-header__top">
+      <!-- Lotus outline SVG -->
+      <svg class="page-header__lotus" viewBox="0 0 80 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40 58 C40 58 29 44 28 31 C27 18 34 7 40 3 C46 7 53 18 52 31 C51 44 40 58 40 58 Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M28 31 C27 18 17 11 7 13 C7 25 13 39 28 49" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M52 31 C53 18 63 11 73 13 C73 25 67 39 52 49" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M28 49 C21 55 11 61 3 62" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M52 49 C59 55 69 61 77 62" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 65 C15 61 30 63 40 67 C50 63 65 61 78 65" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <img
+        src="/images/logo.svg"
+        alt="MonFarm Experience"
+        class="page-header__logo"
+        loading="eager"
+      />
+    </div>
+
+    <h1 class="page-header__title">{title}</h1>
+  </div>
+</section>
+
+<style>
+.page-header {
+  background-color: var(--color-cream-bg);
+  padding-block: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.page-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.page-header__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.page-header__lotus {
+  width: 52px;
+  height: 44px;
+  color: var(--color-olive);
+  flex-shrink: 0;
+}
+
+.page-header__logo {
+  height: 42px;
+  width: auto;
+}
+
+.page-header__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-brown);
+  line-height: 1.15;
+  margin: 0;
+}
+</style>

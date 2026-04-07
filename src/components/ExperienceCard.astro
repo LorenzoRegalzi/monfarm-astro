@@ -1,0 +1,133 @@
+---
+interface Props {
+  date: string;          // e.g. "APRILE 2026"
+  title: string;         // e.g. "Risveglio e Fioritura"
+  location: string;      // e.g. "La Corte Delle 4 Stagioni"
+  city: string;          // e.g. "Ozzano Monferrato (AL)"
+  description: string;
+  image: string;
+  imageAlt: string;
+  instagramUrl: string;
+  instagramLabel?: string;
+  isPast?: boolean;
+}
+
+const {
+  date,
+  title,
+  location,
+  city,
+  description,
+  image,
+  imageAlt,
+  instagramUrl,
+  instagramLabel = "Scopri com'è andata",
+  isPast = true,
+} = Astro.props;
+---
+
+<article class="experience-card">
+  <div class="experience-card__image-wrap">
+    <img
+      src={image}
+      alt={imageAlt}
+      class="experience-card__image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <div class="experience-card__body">
+    <div class="experience-card__meta">
+      <span class="experience-card__date">{date}</span>
+      <h3 class="experience-card__title">"{title}"</h3>
+      <p class="experience-card__location">{location}</p>
+      <p class="experience-card__city">{city}</p>
+    </div>
+
+    <p class="experience-card__description">{description}</p>
+
+    <a
+      href={instagramUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn--primary experience-card__cta"
+      aria-label={`${instagramLabel} — si apre in una nuova scheda`}
+    >
+      {instagramLabel}
+    </a>
+  </div>
+</article>
+
+<style>
+.experience-card {
+  background-color: var(--color-cream-bg);
+  border: 1px solid var(--color-cream);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.experience-card__image-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.experience-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.experience-card:hover .experience-card__image {
+  transform: scale(1.03);
+}
+
+.experience-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-top: 1px solid var(--color-cream);
+}
+
+.experience-card__meta {
+  border-left: 3px solid var(--color-olive);
+  padding-left: var(--space-sm);
+}
+
+.experience-card__date {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-brown);
+}
+
+.experience-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-brown);
+  margin-top: 0.1rem;
+}
+
+.experience-card__location,
+.experience-card__city {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.experience-card__description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.experience-card__cta {
+  align-self: center;
+  margin-top: var(--space-xs);
+  font-size: 0.88rem;
+  padding: 0.65rem 1.75rem;
+}
+</style>

@@ -1,0 +1,316 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Home"
+  description="MonFarm Experience — Un format di esperienze immersive nella natura, nato per creare connessioni autentiche tra luoghi, persone e pratiche consapevoli."
+>
+
+  <!-- ===== HERO TEXT ===== -->
+  <section class="hero-text">
+    <div class="container">
+      <h1 class="hero-text__title">
+        Un format di esperienze immersive nella natura,
+        nato per creare <em>connessioni autentiche</em> tra luoghi,
+        persone e pratiche consapevoli.
+      </h1>
+    </div>
+  </section>
+
+  <!-- ===== HERO IMAGE full-width ===== -->
+  <div class="hero-image">
+    <img
+      src="/images/hero2.png"
+      alt="Gruppo di persone in cerchio durante un'esperienza MonFarm nella natura"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+
+  <!-- ===== OLIVE BAND ===== -->
+  <section class="olive-band">
+    <div class="container">
+      <h2 class="olive-band__text">Seminiamo valori,<br />raccogliamo benessere.</h2>
+    </div>
+  </section>
+
+  <!-- ===== CURA SECTION ===== -->
+  <section class="cura-section">
+    <div class="container cura-section__inner">
+      <h2 class="cura-section__title">
+        Un <em>progetto fatto con cura</em>,<br />non un evento.
+      </h2>
+      <div class="cura-section__image-wrap">
+        <img
+          src="/images/hero-cura.png"
+          alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTRO / CHI SIAMO ===== -->
+  <section class="intro-section">
+    <div class="container intro-section__inner">
+      <p class="intro-section__text">
+        MonFarm Experience nasce dal desiderio di rallentare e tornare
+        all'<strong>essenziale</strong>.
+      </p>
+      <p class="intro-section__text">
+        È un format che unisce natura, presenza e pratiche esperienziali,
+        progettato per essere ospitato in luoghi che condividono la
+        stessa <strong>visione</strong>.
+      </p>
+      <p class="intro-section__text">
+        Ogni esperienza viene pensata come un insieme armonico: il luogo,
+        le persone, le pratiche e il tempo si intrecciano per generare
+        uno spazio autentico di <strong>ascolto</strong> e <strong>connessione</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== APPROCCIO BAND ===== -->
+  <section class="approccio-band">
+    <div class="container approccio-band__inner">
+      <div class="approccio-band__text-wrap">
+        <h2 class="approccio-band__title">Un approccio lento,<br />umano<br />e curato.</h2>
+      </div>
+      <!-- Lotus decoration -->
+      <!-- <svg class="approccio-band__lotus" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 82 C60 82 44 62 42 44 C40 26 51 10 60 4 C69 10 80 26 78 44 C76 62 60 82 60 82 Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M42 44 C40 26 25 16 10 19 C10 37 19 57 42 70" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M78 44 C80 26 95 16 110 19 C110 37 101 57 78 70" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M42 70 C31 79 16 88 4 90" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M78 70 C89 79 104 88 116 90" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 95 C22 89 44 92 60 98 C76 92 98 89 117 95" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg> -->
+    </div>
+  </section>
+
+  <!-- ===== APPROCCIO IMAGE ===== -->
+  <div class="approccio-image">
+    <img
+      src="/images/approccio.png"
+      alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="home-cta">
+    <div class="container home-cta__inner">
+      <p class="home-cta__text">
+        <em>Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.</em>
+      </p>
+      <div class="home-cta__actions">
+        <a href="/esperienze" class="btn btn--primary">Scopri le esperienze</a>
+        <a
+          href="https://www.instagram.com/monfarmexperience"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--outline home-cta__insta"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          Seguici su Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* ---- Hero text ---- */
+.hero-text {
+  padding-block: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.hero-text__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-brown);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.hero-text__title em {
+  font-style: italic;
+}
+
+/* ---- Hero image full-width ---- */
+.hero-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Olive band ---- */
+.olive-band {
+  background-color: var(--color-cream);
+  padding-block: var(--space-xl);
+  text-align: center;
+}
+
+.olive-band__text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  color: var(--color-brown);
+  line-height: 1.3;
+}
+
+/* ---- Cura section ---- */
+.cura-section {
+  padding-block: var(--space-xl);
+  text-align: center;
+}
+
+.cura-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.cura-section__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-brown);
+  line-height: 1.35;
+}
+
+.cura-section__title em {
+  font-style: italic;
+}
+
+.cura-section__image-wrap {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cura-section__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Intro text section ---- */
+.intro-section {
+  padding-block: var(--space-xl);
+}
+
+.intro-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.intro-section__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-brown);
+}
+
+.intro-section__text strong {
+  font-weight: 700;
+}
+
+/* ---- Approccio band ---- */
+.approccio-band {
+  background-color: var(--color-olive);
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--color-cream-bg);
+}
+
+.approccio-band__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.approccio-band__title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+  color: var(--color-brown);
+  line-height: 1.2;
+}
+
+.approccio-band__lotus {
+  width: 110px;
+  height: auto;
+  color: rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+/* ---- Approccio image ---- */
+.approccio-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.approccio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Home CTA ---- */
+.home-cta {
+  background-color: var(--color-cream);
+  padding-block: var(--space-xl);
+  text-align: center;
+}
+
+.home-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.home-cta__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: var(--color-brown);
+  max-width: 400px;
+}
+
+.home-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.home-cta__insta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+</style>

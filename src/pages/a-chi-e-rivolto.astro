@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Layout
+  title="A Chi È Rivolto"
+  description="MonFarm Experience nasce per creare connessioni tra luoghi, professionisti e persone che condividono una stessa visione."
+>
+
+  <PageHeader title="A chi è rivolto" />
+
+  <!-- ===== INTRO ===== -->
+  <section class="section audience-intro">
+    <div class="container">
+      <p class="audience-intro__text">
+        MonFarm Experience nasce per creare connessioni tra luoghi,
+        professionisti e persone che condividono una stessa <em>visione</em>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PHOTO banner ===== -->
+  <div class="full-image">
+    <img
+      src="/images/a-chi-natura.jpg"
+      alt="Scalinata immersa nella vegetazione rigogliosa"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <!-- ===== STRUTTURE ===== -->
+  <section class="section audience-block">
+    <div class="container audience-block__inner">
+      <div class="audience-block__accent-bar"></div>
+      <h2 class="audience-block__title">Strutture immerse nella natura</h2>
+      <p class="audience-block__text">
+        Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
+        nella natura e senti il desiderio di ospitare esperienze curate, lente e
+        coerenti con i tuoi valori, MonFarm Experience può diventare un partner
+        con cui progettare insieme.
+      </p>
+      <a href="/collabora" class="btn btn--outline audience-block__cta">Proponi la tua struttura</a>
+    </div>
+  </section>
+
+  <!-- Photo: pool/tenuta -->
+  <div class="full-image">
+    <img
+      src="/images/struttura.jpg"
+      alt="Veduta aerea di una tenuta con piscina immersa nel verde"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <!-- ===== OPERATORI ===== -->
+  <section class="section audience-block audience-block--cream">
+    <div class="container audience-block__inner">
+      <div class="audience-block__accent-bar"></div>
+      <h2 class="audience-block__title">Operatori e facilitatori</h2>
+      <p class="audience-block__text">
+        Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
+        journaling, dialogo guidato o arti espressive, e credi nel valore della
+        co-creazione, potremmo costruire qualcosa insieme.
+      </p>
+      <p class="audience-block__text">
+        Cerco professionisti che lavorino in presenza, con gruppi piccoli e con
+        un approccio umano e non performativo.
+      </p>
+      <p class="audience-block__emphasis">
+        Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
+      </p>
+      <a href="/collabora" class="btn btn--outline audience-block__cta">Collabora come operatore</a>
+    </div>
+  </section>
+
+  <!-- Photo: facilitatrice -->
+  <div class="full-image">
+    <img
+      src="/images/facilitatrice.jpg"
+      alt="Facilitatrice che guida una pratica all'aperto in un prato"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <!-- ===== PERSONE E GRUPPI ===== -->
+  <section class="section audience-block">
+    <div class="container audience-block__inner">
+      <div class="audience-block__accent-bar"></div>
+      <h2 class="audience-block__title">Persone e gruppi</h2>
+      <p class="audience-block__text">
+        Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
+        contesto autentico.
+      </p>
+      <p class="audience-block__text">
+        MonFarm Experience è pensato per chi desidera fermarsi, respirare e
+        vivere un'esperienza immersiva nella natura, lontano dai ritmi accelerati.
+        Le esperienze vengono comunicate di volta in volta attraverso i canali dedicati.
+      </p>
+      <p class="audience-block__note">
+        Questo sito non propone prenotazioni o vendite dirette, ma racconta il
+        progetto e le sue collaborazioni.
+      </p>
+    </div>
+  </section>
+
+  <!-- Photo: gruppo meditazione prato -->
+  <div class="full-image">
+    <img
+      src="/images/persone-prato.jpg"
+      alt="Gruppo di persone sedute in cerchio su tappetini in un prato"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <!-- ===== CTA SCOPRI DI PIÙ ===== -->
+  <section class="section audience-discover">
+    <div class="container audience-discover__inner">
+      <a href="/esperienze" class="btn btn--primary">Scopri di più</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* ---- Intro ---- */
+.audience-intro {
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.audience-intro__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 4vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-brown);
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.audience-intro__text em {
+  font-style: italic;
+}
+
+/* ---- Full-width image ---- */
+.full-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.full-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Audience blocks ---- */
+.audience-block {
+  padding-block: var(--space-xl);
+}
+
+.audience-block--cream {
+  background-color: var(--color-cream);
+}
+
+.audience-block__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.audience-block__accent-bar {
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-olive);
+  margin-bottom: var(--space-xs);
+}
+
+.audience-block__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  font-weight: 600;
+  color: var(--color-brown);
+  line-height: 1.25;
+}
+
+.audience-block__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
+.audience-block__emphasis {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-brown);
+  line-height: 1.6;
+}
+
+.audience-block__note {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-brown);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.audience-block__cta {
+  align-self: flex-start;
+  margin-top: var(--space-xs);
+}
+
+/* ---- Discover CTA ---- */
+.audience-discover {
+  padding-block: var(--space-lg);
+}
+
+.audience-discover__inner {
+  display: flex;
+  justify-content: center;
+}
+</style>

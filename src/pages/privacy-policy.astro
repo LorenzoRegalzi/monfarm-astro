@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy"
+  description="Informativa sulla privacy di MonFarm Experience — trattamento dei dati personali ai sensi del GDPR."
+>
+
+  <section class="section page-hero">
+    <div class="container">
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-subtitle">
+        Informativa sul trattamento dei dati personali ai sensi del Regolamento
+        (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003 e s.m.i.
+      </p>
+    </div>
+  </section>
+
+  <section class="section privacy-body">
+    <div class="container privacy-content">
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        MonFarm Experience<br />
+        [Indirizzo del titolare — da completare]<br />
+        Email: <a href="mailto:info@monfarmexperience.it">info@monfarmexperience.it</a>
+      </p>
+
+      <h2>2. Tipologia di dati raccolti</h2>
+      <p>
+        Attraverso il form di contatto presente su questo sito raccogliamo i
+        seguenti dati personali:
+      </p>
+      <ul>
+        <li>Nome e cognome</li>
+        <li>Indirizzo email</li>
+        <li>Motivo del contatto</li>
+        <li>Contenuto del messaggio</li>
+      </ul>
+
+      <h2>3. Finalità e base giuridica</h2>
+      <p>
+        I dati forniti tramite il form di contatto sono trattati esclusivamente
+        per rispondere alla tua richiesta (art. 6, par. 1, lett. b GDPR).
+        Non utilizziamo i tuoi dati per finalità di marketing senza un tuo
+        esplicito consenso.
+      </p>
+
+      <h2>4. Modalità di trattamento e conservazione</h2>
+      <p>
+        I dati sono trattati con strumenti elettronici e conservati per il
+        tempo strettamente necessario a gestire la tua richiesta, e comunque
+        non oltre 24 mesi dalla raccolta, salvo obblighi di legge.
+      </p>
+
+      <h2>5. Destinatari dei dati</h2>
+      <p>
+        I dati non sono ceduti a terzi. Potranno essere comunicati a fornitori
+        di servizi tecnici (hosting, email) nella misura strettamente necessaria
+        all'erogazione del servizio, adeguatamente istruiti come responsabili del
+        trattamento.
+      </p>
+
+      <h2>6. I tuoi diritti (artt. 15–22 GDPR)</h2>
+      <p>Hai il diritto di:</p>
+      <ul>
+        <li>accedere ai tuoi dati personali;</li>
+        <li>ottenere la rettifica o la cancellazione;</li>
+        <li>richiedere la limitazione del trattamento;</li>
+        <li>opporti al trattamento;</li>
+        <li>richiedere la portabilità dei dati;</li>
+        <li>revocare il consenso in qualsiasi momento;</li>
+        <li>proporre reclamo all'Autorità di controllo (Garante Privacy IT).</li>
+      </ul>
+      <p>
+        Per esercitare i tuoi diritti scrivi a
+        <a href="mailto:info@monfarmexperience.it">info@monfarmexperience.it</a>.
+      </p>
+
+      <h2>7. Cookie</h2>
+      <p>
+        Questo sito utilizza esclusivamente cookie tecnici necessari al
+        corretto funzionamento delle pagine. Non vengono installati cookie di
+        profilazione o di marketing di terze parti senza il tuo consenso.
+      </p>
+
+      <p class="privacy-update">
+        <em>Ultimo aggiornamento: aprile 2026</em>
+      </p>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.page-hero {
+  padding-bottom: 0;
+}
+
+.page-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: var(--space-sm);
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  max-width: 520px;
+}
+
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 680px;
+}
+
+.privacy-content h2 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--color-cream);
+  padding-bottom: var(--space-xs);
+}
+
+.privacy-content p,
+.privacy-content li {
+  line-height: 1.8;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+.privacy-content ul {
+  list-style: disc;
+  padding-left: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.privacy-content a {
+  color: var(--color-olive);
+}
+
+.privacy-update {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  opacity: 0.75;
+}
+</style>

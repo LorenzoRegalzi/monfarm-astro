@@ -75,11 +75,12 @@ monfarm-astro/
 ## Palette colori (da InDesign)
 
 ```css
---color-brown:      #715b43;   /* testo, titoli */
---color-cream:      #dfd3bd;   /* bordi, sfondi card */
---color-cream-bg:   #ede7d9;   /* sfondo pagina */
---color-olive:      #828259;   /* bottoni, link, accenti */
---color-terracotta: #c97542;   /* accento secondario */
+--color-brown:       #715b43;   /* testo, titoli */
+--color-cream:       #dfd3bd;   /* bordi, sfondi card */
+--color-cream-bg:    #ede7d9;   /* sfondo pagina */
+--color-olive:       #828259;   /* bottoni, link, accenti */
+--color-olive-light: #98926E;
+--color-terracotta:  #c97542;   /* accento secondario */
 ```
 
 ---

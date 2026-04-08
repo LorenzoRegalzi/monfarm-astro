@@ -79,15 +79,6 @@ import Layout from '../layouts/Layout.astro';
       <div class="approccio-band__text-wrap">
         <h2 class="approccio-band__title">Un approccio lento,<br />umano<br />e curato.</h2>
       </div>
-      <!-- Lotus decoration -->
-      <!-- <svg class="approccio-band__lotus" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 82 C60 82 44 62 42 44 C40 26 51 10 60 4 C69 10 80 26 78 44 C76 62 60 82 60 82 Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M42 44 C40 26 25 16 10 19 C10 37 19 57 42 70" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M78 44 C80 26 95 16 110 19 C110 37 101 57 78 70" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M42 70 C31 79 16 88 4 90" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M78 70 C89 79 104 88 116 90" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M3 95 C22 89 44 92 60 98 C76 92 98 89 117 95" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg> -->
     </div>
   </section>
 
@@ -100,6 +91,39 @@ import Layout from '../layouts/Layout.astro';
       decoding="async"
     />
   </div>
+
+  <!-- ===== VALORI ===== -->
+  <section class="valori-section">
+    <div class="container">
+      <div class="valori-item">
+        <h3 class="valori-item__title">Cura</h3>
+        <p class="valori-item__text">Ogni dettaglio viene pensato con attenzione: dalla scelta del luogo alla composizione del gruppo, fino alla qualità della presenza condivisa.</p>
+      </div>
+      <div class="valori-item">
+        <h3 class="valori-item__title">Co-creazione</h3>
+        <p class="valori-item__text">Le esperienze nascono dal dialogo tra struttura, operatori e partecipanti. Non sono format rigidi, ma processi vivi.</p>
+      </div>
+      <div class="valori-item">
+        <h3 class="valori-item__title">Piccoli gruppi</h3>
+        <p class="valori-item__text">Crediamo nel valore dell'intimità e della qualità relazionale. Lavoriamo con numeri contenuti per preservare autenticità e profondità.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-text">
+    <div class="container">
+      <h1 class="hero-text__title">
+        A chi si rivolge MonFarm Experience
+      </h1>
+    </div>
+  </section>
+
+  <section class="hero-text">
+    <div class="container">
+      <div class="divider-big"></div>
+      <div class="divider"></div>
+    </div>
+  </section>
 
   <!-- ===== CTA SECTION ===== -->
   <section class="home-cta">
@@ -239,7 +263,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ---- Approccio band ---- */
 .approccio-band {
-  background-color: var(--color-olive);
+  background-color: var(--color-olive-light);
   padding-block: var(--space-xl);
   border-top: 1px solid var(--color-cream-bg);
 }
@@ -312,5 +336,33 @@ import Layout from '../layouts/Layout.astro';
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* ---- Valori ---- */
+.valori-section {
+  background-color: var(--color-olive);
+  padding-block: var(--space-xl);
+}
+
+.valori-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.valori-item__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 600;
+  color: var(--color-cream-bg);
+  margin-bottom: var(--space-xs);
+}
+
+.valori-item__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-cream-bg);
+  opacity: 0.85;
+  text-align: justify;
 }
 </style>

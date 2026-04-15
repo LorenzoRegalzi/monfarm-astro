@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 ---
 
 <Layout
@@ -118,35 +119,76 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="hero-text">
+  <SectionDivider />
+
+  <section class="audience-intro">
     <div class="container">
-      <div class="divider-big"></div>
-      <div class="divider"></div>
+      <h2 class="audience-intro__title">Strutture immerse nella natura</h2>
+      <p class="audience-intro__text">
+        Agriturismi, tenute, relais e luoghi che desiderano ospitare esperienze curate  e coerenti con i propri valori.
+      </p>
     </div>
   </section>
 
+   <!-- ===== APPROCCIO IMAGE ===== -->
+  <div class="approccio-image">
+    <img
+      src="/images/pool.png"
+      alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <SectionDivider />
+
+  <section class="audience-intro">
+    <div class="container">
+      <h2 class="audience-intro__title">Operatori e facilitatori</h2>
+      <p class="audience-intro__text">
+        Professionisti che accompagnano le persone attraverso pratiche corporee,espressive o di consapevolezza.
+      </p>
+    </div>
+  </section>
+
+  <div class="approccio-image">
+    <img
+      src="/images/woman-walk.png"
+      alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <SectionDivider />
+
+  
+
+   <section class="audience-intro">
+    <div class="container">
+      <h2 class="audience-intro__title">Persone e gruppi</h2>
+      <p class="audience-intro__text">
+        Chi sente il bisogno di fermarsi, respirare e riconnettersi in un contesto autentico.
+      </p>
+    </div>
+  </section>
+
+  <div class="approccio-image">
+    <img
+      src="/images/grass-meditation.png"
+      alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
   <!-- ===== CTA SECTION ===== -->
   <section class="home-cta">
     <div class="container home-cta__inner">
+      <a href="/esperienze" class="btn btn--primary" style="position: relative; bottom: 22px;">Scopri di più</a>
       <p class="home-cta__text">
-        <em>Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.</em>
+        <em>Se senti che potrebbe esserci una sintonia, iniziamo a parlarne. Ogni collaborazione nasce da un incontro. Raccontami il tuo spazio, il tuo lavoro o la tua visione.</em>
       </p>
-      <div class="home-cta__actions">
-        <a href="/esperienze" class="btn btn--primary">Scopri le esperienze</a>
-        <a
-          href="https://www.instagram.com/monfarmexperience"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn--outline home-cta__insta"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-          Seguici su Instagram
-        </a>
-      </div>
+      <a href="/esperienze" class="btn btn--primary">Collabora</a>
     </div>
   </section>
 
@@ -171,6 +213,10 @@ import Layout from '../layouts/Layout.astro';
 
 .hero-text__title em {
   font-style: italic;
+}
+
+.divider-hero {
+  background-color: var(--color-brown)
 }
 
 /* ---- Hero image full-width ---- */
@@ -307,6 +353,7 @@ import Layout from '../layouts/Layout.astro';
 .home-cta {
   background-color: var(--color-cream);
   padding-block: var(--space-xl);
+  padding-top: 0;
   text-align: center;
 }
 
@@ -336,6 +383,28 @@ import Layout from '../layouts/Layout.astro';
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* ---- Audience intro ---- */
+.audience-intro {
+  padding-block: var(--space-xl);
+}
+
+.audience-intro__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 700;
+  color: var(--color-brown);
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.audience-intro__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-brown);
+  text-align: left;
+  max-width: 560px;
 }
 
 /* ---- Valori ---- */

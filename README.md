@@ -40,7 +40,7 @@ monfarm-astro/
 ├── public/
 │   ├── favicon.svg
 │   └── images/
-│       ├── logo.png                        ← sostituisci con SVG reale
+│       ├── logo.svg                        ← sostituisci con SVG reale
 │       ├── logo-symbol.svg                 ← sostituisci con SVG reale
 │       ├── hero.jpg                        ← aggiungi foto reale
 │       ├── og-image.jpg                    ← 1200×630px per social
@@ -97,7 +97,7 @@ monfarm-astro/
 
 ## Da fare prima del go-live
 
-- [ ] Sostituire `public/images/logo.png` con il logo reale (esporta da InDesign)
+- [ ] Sostituire `public/images/logo.svg` con il logo reale (esporta da InDesign)
 - [ ] Aggiungere tutte le foto reali in `public/images/`
 - [ ] Creare `public/images/og-image.jpg` (1200×630px)
 - [ ] Completare i dati del Titolare nella Privacy Policy (`/privacy-policy`)

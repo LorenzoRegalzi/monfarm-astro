@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionDivider from '../components/SectionDivider.astro';
+import HeroText from '../components/HeroText.astro';
 ---
 
 <Layout
@@ -8,16 +9,11 @@ import SectionDivider from '../components/SectionDivider.astro';
   description="MonFarm Experience — Un format di esperienze immersive nella natura, nato per creare connessioni autentiche tra luoghi, persone e pratiche consapevoli."
 >
 
-  <!-- ===== HERO TEXT ===== -->
-  <section class="hero-text">
-    <div class="container">
-      <h1 class="hero-text__title">
-        Un format di esperienze immersive nella natura,
+  <HeroText>
+    Un format di esperienze immersive nella natura,
         nato per creare <em>connessioni autentiche</em> tra luoghi,
         persone e pratiche consapevoli.
-      </h1>
-    </div>
-  </section>
+  </HeroText>
 
   <!-- ===== HERO IMAGE full-width ===== -->
   <div class="hero-image">

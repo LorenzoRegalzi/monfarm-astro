@@ -1,0 +1,32 @@
+---
+// Sezione testo centrata — passa il contenuto come children
+---
+
+<section class="hero-text">
+  <div class="container">
+    <h1 class="hero-text__title">
+      <slot />
+    </h1>
+  </div>
+</section>
+
+<style>
+.hero-text {
+  padding-block: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.hero-text__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-brown);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.hero-text__title em {
+  font-style: italic;
+}
+</style>

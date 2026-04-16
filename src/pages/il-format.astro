@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import HeroText from '../components/HeroText.astro';
 ---
 
 <Layout
@@ -9,57 +11,52 @@ import PageHeader from '../components/PageHeader.astro';
 >
 
   <PageHeader title="Il format" />
-
-  <!-- ===== INTRO TEXT ===== -->
-  <section class="section format-intro">
-    <div class="container">
-      <p class="format-intro__para">
-        MonFarm Experience nasce dal desiderio di rallentare e tornare
-        all'<strong>essenziale</strong>.
-      </p>
-      <p class="format-intro__para">
-        È un format che unisce natura, presenza e pratiche esperienziali,
-        progettato per essere ospitato in luoghi che condividono la
-        stessa <strong>visione</strong>.
-      </p>
-      <p class="format-intro__para">
-        Ogni esperienza viene pensata come un insieme armonico: il luogo,
-        le persone, le pratiche e il tempo si intrecciano per generare
-        uno spazio autentico di <strong>ascolto</strong> e <strong>connessione</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== APPROCCIO BAND ===== -->
-  <section class="approccio-band">
-    <div class="container approccio-band__inner">
-      <h2 class="approccio-band__title">Un approccio lento,<br />umano<br />e curato.</h2>
-      <svg class="approccio-band__lotus" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 82 C60 82 44 62 42 44 C40 26 51 10 60 4 C69 10 80 26 78 44 C76 62 60 82 60 82 Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M42 44 C40 26 25 16 10 19 C10 37 19 57 42 70" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M78 44 C80 26 95 16 110 19 C110 37 101 57 78 70" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M42 70 C31 79 16 88 4 90" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M78 70 C89 79 104 88 116 90" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M3 95 C22 89 44 92 60 98 C76 92 98 89 117 95" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ===== APPROCCIO IMAGE ===== -->
-  <div class="full-image">
+  <div class="approccio-image">
     <img
-      src="/images/approccio.jpg"
-      alt="Persone in un prato in posizione meditativa durante un ritiro MonFarm"
+      src="/images/people-stretching.png"
+      alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <HeroText>
+    Un modo di progettare esperienze che mette al centro la
+    relazione tra luogo, persone e pratiche.
+  </HeroText>
+  <SectionDivider />
+
+  <section class="audience-intro">
+    <div class="container">
+      <h2 class="audience-intro__title">Rallentare per tornare all'essenziale</h2>
+      <p class="audience-intro__text">
+        MonFarm nasce dal desiserio di creare spazi in cui il tempo possa dilatarsi e la presenza tornare al centro
+      </p>
+      <br/>
+      <br/>
+      <br/>
+      <p class="audience-intro__text">
+        Crediamo nella natura come contesto generativo nella lentezza come valore e nell'incontro come esperienza trasformativa. Ogni proposta nasce da una visione chiara: favorire connessioni autentiche, lontane dalla logica della performance o del consumo. Non si trata di organizzare evneti ma di curare processi.
+      </p>
+    </div>
+  </section>
+
+
+  <div class="approccio-image">
+    <img
+      src="/images/hug.png"
+      alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta"
       loading="lazy"
       decoding="async"
     />
   </div>
 
+  <SectionDivider />
+
   <!-- ===== COME SI COSTRUISCE ===== -->
   <section class="section build-section">
     <div class="container">
       <div class="build-section__header">
-        <h2 class="build-section__title">Come si costruisce<br /><em>un'esperienza</em> <img src="/images/logo.png" alt="" class="build-section__logo-inline" aria-hidden="true" /></h2>
+        <h2 class="build-section__title">Come si costruisce<br /><em>un'esperienza</em></h2>
       </div>
 
       <ul class="build-list" role="list">
@@ -139,17 +136,18 @@ import PageHeader from '../components/PageHeader.astro';
     </div>
   </section>
 
+  <SectionDivider />
   <!-- ===== MI PRESENTO ===== -->
   <section class="section mi-presento">
     <div class="container mi-presento__inner">
-      <div class="mi-presento__accent-bar"></div>
 
-      <h2 class="mi-presento__heading">Mi <em>presento</em></h2>
+      <h2 class="mi-presento__heading" style="text-align: center; position: relative;
+  top: 44px;">Mi presento</h2>
 
       <div class="mi-presento__card">
-        <div class="mi-presento__image-wrap">
+        <div class="mi-presento__image-wrap" >
           <img
-            src="/images/beatrice.jpg"
+            src="/images/beatrice.png"
             alt="Beatrice Furia, fondatrice e curatrice di MonFarm Experience"
             loading="lazy"
             decoding="async"
@@ -167,7 +165,6 @@ import PageHeader from '../components/PageHeader.astro';
   <section class="section mio-ruolo">
     <div class="container">
       <div class="mio-ruolo__inner">
-        <div class="mio-ruolo__accent-bar"></div>
         <h2 class="mio-ruolo__title">Il mio <em>ruolo</em></h2>
         <p>
           Il mio compito è tenere insieme tutti gli elementi dell'esperienza.
@@ -182,6 +179,7 @@ import PageHeader from '../components/PageHeader.astro';
     </div>
   </section>
 
+  <SectionDivider />
   <!-- ===== CLOSING QUOTE ===== -->
   <section class="closing-quote">
     <div class="container">
@@ -189,14 +187,6 @@ import PageHeader from '../components/PageHeader.astro';
         <em>MonFarm Experience è un invito a progettare insieme spazi di qualità,
         in cui la relazione diventa il cuore dell'esperienza.</em>
       </blockquote>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="section format-cta-section">
-    <div class="container format-cta-inner">
-      <a href="/collabora" class="btn btn--primary">Collabora con noi</a>
-      <a href="/contatti" class="btn btn--outline">Contattaci</a>
     </div>
   </section>
 
@@ -331,7 +321,7 @@ import PageHeader from '../components/PageHeader.astro';
 
 /* ---- Mi presento ---- */
 .mi-presento {
-  background-color: var(--color-cream);
+
 }
 
 .mi-presento__inner {
@@ -435,7 +425,6 @@ import PageHeader from '../components/PageHeader.astro';
 
 /* ---- Closing quote ---- */
 .closing-quote {
-  background-color: var(--color-cream);
   padding-block: var(--space-xl);
 }
 
@@ -463,4 +452,50 @@ import PageHeader from '../components/PageHeader.astro';
   gap: var(--space-sm);
   justify-content: center;
 }
+
+.approccio-image {
+  width: 100%;
+  height: 50vh;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.hero-text__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-brown);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* ---- Audience intro ---- */
+.audience-intro {
+  padding-block: var(--space-xl);
+}
+
+.audience-intro__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 700;
+  color: var(--color-brown);
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.audience-intro__text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-brown);
+  text-align: left;
+  max-width: 560px;
+}
+
 </style>

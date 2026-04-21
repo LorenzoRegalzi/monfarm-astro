@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import '../styles/typography.css';
 
 interface Props {
   title: string;
@@ -44,13 +45,9 @@ const fullTitle = title === 'Home' ? 'MonFarm Experience' : `${title} — MonFar
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Font: Baskerville URW + Proxima Nova (font commerciali) -->
+    <!-- Opzione A — Adobe Fonts: incolla qui il tag <link> del kit Typekit -->
+    <!-- Opzione B — Self-host: aggiungi @font-face in typography.css puntando a /public/fonts/ -->
 
     <title>{fullTitle}</title>
   </head>

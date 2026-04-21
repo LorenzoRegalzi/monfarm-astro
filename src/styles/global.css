@@ -17,8 +17,8 @@
   --color-text-light:#9e8a70;
 
   /* Typography */
-  --font-serif:  'Playfair Display', Georgia, serif;
-  --font-sans:   'Lato', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:  'Baskerville URW', 'Baskerville', 'Big Caslon', Georgia, serif;
+  --font-sans:   'Proxima Nova', 'Proxima Nova A', 'Helvetica Neue', Arial, sans-serif;
 
   /* Spacing */
   --space-xs:  0.5rem;
@@ -129,10 +129,10 @@ a:hover { opacity: 0.75; }
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-decoration: none;
   text-align: center;
   padding: 0.75rem 2rem;

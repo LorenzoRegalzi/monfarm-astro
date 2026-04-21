@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
+import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
 ---
 
 <Layout
@@ -10,7 +11,19 @@ import PageHeader from '../components/PageHeader.astro';
 
   <PageHeader title="A chi è rivolto" />
 
-  <!-- ===== INTRO ===== -->
+ 
+
+  <!-- ===== PHOTO banner ===== -->
+  <div class="full-image" style="height: 50vh;">
+    <img
+      src="/images/nature.png"
+      alt="Scalinata immersa nella vegetazione rigogliosa"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+   <!-- ===== INTRO ===== -->
   <section class="section audience-intro">
     <div class="container">
       <p class="audience-intro__text">
@@ -20,20 +33,21 @@ import PageHeader from '../components/PageHeader.astro';
     </div>
   </section>
 
-  <!-- ===== PHOTO banner ===== -->
-  <div class="full-image">
+  <SectionDividerNoBar />
+
+   <div class="full-image" style="height: 20vh;">
     <img
-      src="/images/a-chi-natura.jpg"
+      src="/images/nature2.png"
       alt="Scalinata immersa nella vegetazione rigogliosa"
       loading="lazy"
       decoding="async"
     />
   </div>
 
-  <!-- ===== STRUTTURE ===== -->
-  <section class="section audience-block">
-    <div class="container audience-block__inner">
-      <div class="audience-block__accent-bar"></div>
+
+
+  <section class="audience-intro">
+    <div class="container">
       <h2 class="audience-block__title">Strutture immerse nella natura</h2>
       <p class="audience-block__text">
         Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
@@ -41,24 +55,25 @@ import PageHeader from '../components/PageHeader.astro';
         coerenti con i tuoi valori, MonFarm Experience può diventare un partner
         con cui progettare insieme.
       </p>
-      <a href="/collabora" class="btn btn--outline audience-block__cta">Proponi la tua struttura</a>
+
+      <a href="/collabora" class="btn btn--primary audience-block__cta">Proponi la tua struttura</a>
     </div>
   </section>
 
-  <!-- Photo: pool/tenuta -->
-  <div class="full-image">
+   <SectionDividerNoBar />
+
+    <div class="full-image" style="height: 20vh;">
     <img
-      src="/images/struttura.jpg"
-      alt="Veduta aerea di una tenuta con piscina immersa nel verde"
+      src="/images/fire.png"
+      alt="Scalinata immersa nella vegetazione rigogliosa"
       loading="lazy"
       decoding="async"
     />
   </div>
 
-  <!-- ===== OPERATORI ===== -->
-  <section class="section audience-block audience-block--cream">
-    <div class="container audience-block__inner">
-      <div class="audience-block__accent-bar"></div>
+
+   <section class="audience-intro">
+    <div class="container">
       <h2 class="audience-block__title">Operatori e facilitatori</h2>
       <p class="audience-block__text">
         Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
@@ -72,15 +87,17 @@ import PageHeader from '../components/PageHeader.astro';
       <p class="audience-block__emphasis">
         Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
       </p>
+
       <a href="/collabora" class="btn btn--outline audience-block__cta">Collabora come operatore</a>
     </div>
   </section>
 
-  <!-- Photo: facilitatrice -->
-  <div class="full-image">
+ <SectionDividerNoBar />
+
+    <div class="full-image" style="height: 20vh;">
     <img
-      src="/images/facilitatrice.jpg"
-      alt="Facilitatrice che guida una pratica all'aperto in un prato"
+      src="/images/sleep.png"
+      alt="Scalinata immersa nella vegetazione rigogliosa"
       loading="lazy"
       decoding="async"
     />
@@ -89,7 +106,6 @@ import PageHeader from '../components/PageHeader.astro';
   <!-- ===== PERSONE E GRUPPI ===== -->
   <section class="section audience-block">
     <div class="container audience-block__inner">
-      <div class="audience-block__accent-bar"></div>
       <h2 class="audience-block__title">Persone e gruppi</h2>
       <p class="audience-block__text">
         Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
@@ -107,29 +123,16 @@ import PageHeader from '../components/PageHeader.astro';
     </div>
   </section>
 
-  <!-- Photo: gruppo meditazione prato -->
-  <div class="full-image">
-    <img
-      src="/images/persone-prato.jpg"
-      alt="Gruppo di persone sedute in cerchio su tappetini in un prato"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-
-  <!-- ===== CTA SCOPRI DI PIÙ ===== -->
-  <section class="section audience-discover">
-    <div class="container audience-discover__inner">
-      <a href="/esperienze" class="btn btn--primary">Scopri di più</a>
-    </div>
-  </section>
-
 </Layout>
 
 <style>
 /* ---- Intro ---- */
 .audience-intro {
-  padding-bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+a {
   text-align: center;
 }
 

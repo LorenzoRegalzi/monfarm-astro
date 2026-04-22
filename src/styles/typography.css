@@ -62,7 +62,7 @@
    4. TITOLI TERZIANTI — H3
    Baskerville URW · Regular
    ------------------------------------------------------------------ */
-.text-h3 {
+.text-h3, h3 {
   font-family: var(--font-serif);
   font-weight: 400;
   font-style: normal;
@@ -71,11 +71,15 @@
   color: var(--color-brown);
 }
 
+h3 em {
+  font-style: italic;
+}
+
 /* ------------------------------------------------------------------
    5. CORPO DEL TESTO
    Proxima Nova · Regular · Normale
    ------------------------------------------------------------------ */
-.text-body {
+.text-body, p {
   font-family: var(--font-sans);
   font-weight: 400;
   font-style: normal;
@@ -90,7 +94,7 @@
    Es. "Non esistono format preconfezionati"
        "Ogni collaborazione nasce da una conversazione"
    ------------------------------------------------------------------ */
-.text-body--italic {
+.text-body--italic, p em {
   font-family: var(--font-sans);
   font-weight: 400;
   font-style: italic;

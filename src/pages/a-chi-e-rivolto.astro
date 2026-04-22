@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
+import FullImage from '../components/FullImage.astro';
+import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
 ---
 
 <Layout
@@ -14,14 +17,7 @@ import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
  
 
   <!-- ===== PHOTO banner ===== -->
-  <div class="full-image" style="height: 50vh;">
-    <img
-      src="/images/nature.png"
-      alt="Scalinata immersa nella vegetazione rigogliosa"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/nature.png" alt="Scalinata immersa nella vegetazione rigogliosa" height="50vh" />
 
    <!-- ===== INTRO ===== -->
   <section class="section audience-intro">
@@ -35,93 +31,64 @@ import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
 
   <SectionDividerNoBar />
 
-   <div class="full-image" style="height: 20vh;">
-    <img
-      src="/images/nature2.png"
-      alt="Scalinata immersa nella vegetazione rigogliosa"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/nature2.png" alt="Scalinata immersa nella vegetazione rigogliosa" height="20vh" />
 
 
 
-  <section class="audience-intro">
-    <div class="container">
-      <h2 class="audience-block__title">Strutture immerse nella natura</h2>
-      <p class="audience-block__text">
-        Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
-        nella natura e senti il desiderio di ospitare esperienze curate, lente e
-        coerenti con i tuoi valori, MonFarm Experience può diventare un partner
-        con cui progettare insieme.
-      </p>
-
-      <a href="/collabora" class="btn btn--primary audience-block__cta">Proponi la tua struttura</a>
-    </div>
-  </section>
+  <Section>
+    <h2 >Strutture immerse nella natura</h2>
+    <p >
+      Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
+      nella natura e senti il desiderio di ospitare esperienze curate, lente e
+      coerenti con i tuoi valori, MonFarm Experience può diventare un partner
+      con cui progettare insieme.
+    </p>
+    <Button href="/collabora" text="Proponi la tua struttura" />
+  </Section>
 
    <SectionDividerNoBar />
 
-    <div class="full-image" style="height: 20vh;">
-    <img
-      src="/images/fire.png"
-      alt="Scalinata immersa nella vegetazione rigogliosa"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/fire.png" alt="Falò acceso in un contesto naturale" height="20vh" />
 
 
-   <section class="audience-intro">
-    <div class="container">
-      <h2 class="audience-block__title">Operatori e facilitatori</h2>
-      <p class="audience-block__text">
-        Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
-        journaling, dialogo guidato o arti espressive, e credi nel valore della
-        co-creazione, potremmo costruire qualcosa insieme.
-      </p>
-      <p class="audience-block__text">
-        Cerco professionisti che lavorino in presenza, con gruppi piccoli e con
-        un approccio umano e non performativo.
-      </p>
-      <p class="audience-block__emphasis">
-        Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
-      </p>
-
-      <a href="/collabora" class="btn btn--outline audience-block__cta">Collabora come operatore</a>
-    </div>
-  </section>
+  <Section>
+    <h2 >Operatori e facilitatori</h2>
+    <p >
+      Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
+      journaling, dialogo guidato o arti espressive, e credi nel valore della
+      co-creazione, potremmo costruire qualcosa insieme.
+    </p>
+    <p>
+      Cerco professionisti che lavorino in presenza, con gruppi piccoli e con
+      un approccio umano e non performativo.
+    </p>
+    <p class="audience-block__emphasis">
+      Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
+    </p>
+    <Button href="/collabora" text="Collabora come operatore" />
+  </Section>
 
  <SectionDividerNoBar />
 
-    <div class="full-image" style="height: 20vh;">
-    <img
-      src="/images/sleep.png"
-      alt="Scalinata immersa nella vegetazione rigogliosa"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/sleep.png" alt="Persona in riposo immersa nella natura" height="20vh" />
 
   <!-- ===== PERSONE E GRUPPI ===== -->
-  <section class="section audience-block">
-    <div class="container audience-block__inner">
-      <h2 class="audience-block__title">Persone e gruppi</h2>
-      <p class="audience-block__text">
-        Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
-        contesto autentico.
-      </p>
-      <p class="audience-block__text">
-        MonFarm Experience è pensato per chi desidera fermarsi, respirare e
-        vivere un'esperienza immersiva nella natura, lontano dai ritmi accelerati.
-        Le esperienze vengono comunicate di volta in volta attraverso i canali dedicati.
-      </p>
-      <p class="audience-block__note">
-        Questo sito non propone prenotazioni o vendite dirette, ma racconta il
-        progetto e le sue collaborazioni.
-      </p>
-    </div>
-  </section>
+  <Section>
+    <h2>Persone e gruppi</h2>
+    <p >
+      Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
+      contesto autentico.
+    </p>
+    <p >
+      MonFarm Experience è pensato per chi desidera fermarsi, respirare e
+      vivere un'esperienza immersiva nella natura, lontano dai ritmi accelerati.
+      Le esperienze vengono comunicate di volta in volta attraverso i canali dedicati.
+    </p>
+    <p class="audience-block__note">
+      Questo sito non propone prenotazioni o vendite dirette, ma racconta il
+      progetto e le sue collaborazioni.
+    </p>
+  </Section>
 
 </Layout>
 

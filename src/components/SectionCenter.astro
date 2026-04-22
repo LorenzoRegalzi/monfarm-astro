@@ -1,0 +1,22 @@
+---
+---
+
+<section class="section-center">
+  <div class="container section-center__inner">
+    <slot />
+  </div>
+</section>
+
+<style>
+.section-center {
+  padding-block: var(--space-lg);
+}
+
+.section-center__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+</style>

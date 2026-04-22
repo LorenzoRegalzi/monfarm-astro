@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 import HeroText from '../components/HeroText.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout
@@ -180,11 +181,11 @@ import HeroText from '../components/HeroText.astro';
   <!-- ===== CTA SECTION ===== -->
   <section class="home-cta">
     <div class="container home-cta__inner">
-      <a href="/esperienze" class="btn btn--primary" style="position: relative; bottom: 22px;">Scopri di più</a>
+      <Button href="/esperienze" text="Scopri di più" />
       <p class="home-cta__text">
         <em>Se senti che potrebbe esserci una sintonia, iniziamo a parlarne. Ogni collaborazione nasce da un incontro. Raccontami il tuo spazio, il tuo lavoro o la tua visione.</em>
       </p>
-      <a href="/esperienze" class="btn btn--primary">Collabora</a>
+      <Button href="/collabora" text="Collabora" />
     </div>
   </section>
 

@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
+import Button from '../components/Button.astro';
+import SectionCenter from '../components/SectionCenter.astro';
+import FullImage from '../components/FullImage.astro';
+import Section from '../components/Section.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 ---
 
 <Layout
@@ -11,163 +16,90 @@ import PageHeader from '../components/PageHeader.astro';
   <PageHeader title="Collabora" />
 
   <!-- ===== INTRO QUOTE ===== -->
-  <section class="section collab-intro">
-    <div class="container">
-      <p class="collab-intro__text">
-        Ogni esperienza nasce da una <em>visione condivisa</em>.
-      </p>
-      <p class="collab-intro__sub">
-        Se senti che il tuo spazio o il tuo lavoro vibrano in sintonia con
-        <strong>l'anima</strong> di MonFarm Experience,
-        prendiamoci del tempo per parlarne.
-      </p>
-    </div>
-  </section>
+  <SectionCenter>
+    <h3>
+      Ogni esperienza nasce da<br> una <em>visione condivisa</em>.
+    </h3>
+    <h3>
+      Se senti che il tuo spazio o il tuo lavoro vibrano in sintonia con
+      l'anima di MonFarm Experience,
+      prendiamoci del tempo per parlarne.
+    </h3>
+  </SectionCenter>
 
   <!-- ===== PHOTO ===== -->
-  <div class="full-image">
-    <img
-      src="/images/collabora-tavola.jpg"
-      alt="Tavola apparecchiata all'aperto sotto un ombrellone, atmosfera curata"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/collab_1.png" alt="Tavola apparecchiata all'aperto sotto un ombrellone, atmosfera curata" />
 
   <!-- ===== STRUTTURE ===== -->
-  <section class="section collab-block">
-    <div class="container collab-block__inner">
-      <div class="collab-block__num-wrap" aria-hidden="true">
-        <span class="collab-block__num">→</span>
-      </div>
-      <h2 class="collab-block__title">Collaborazioni con strutture</h2>
-      <p class="collab-block__text">
-        Cerco luoghi immersi nella natura che desiderino accogliere ritiri e
-        giornate curate, intime e rispettose dei ritmi di ogni stagione.
-      </p>
-      <p class="collab-block__text">
-        Per me, una collaborazione non è mai il semplice 'affitto di uno spazio'.
-        È una progettazione <strong>condivisa</strong>.
-      </p>
-
-      <div class="collab-lists">
-        <div class="collab-list-group">
-          <div class="collab-list-group__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <h3 class="collab-list-group__title">Cosa offre MonFarm Experience</h3>
-          <ul class="collab-list" role="list">
-            <li>Ideazione e cura del format</li>
-            <li>Selezione degli operatori</li>
-            <li>Composizione del gruppo</li>
-            <li>Comunicazione poetica e coerente</li>
-          </ul>
-        </div>
-
-        <div class="collab-list-group">
-          <div class="collab-list-group__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <h3 class="collab-list-group__title">Cosa chiedo alla struttura</h3>
-          <ul class="collab-list" role="list">
-            <li>Spazi adatti a piccoli gruppi</li>
-            <li>Ospitalità genuina e calore</li>
-            <li>Coerenza valoriale</li>
-          </ul>
-        </div>
-      </div>
+  <Section>
+    <h4>Collaborazioni con strutture</h4>
+    <p>
+      Cerco luoghi immersi nella natura che desiderino accogliere ritiri e
+      giornate curate, intime e rispettose dei ritmi di ogni stagione.
+      Per me, una collaborazione non è mai il semplice 'affitto di uno spazio'.
+      È una progettazione <em>condivisa</em>.
+    </p>
+    <h4>Cosa offre MonFarm Experience</h4>
+    <ul>
+      <li>Ideazione e cura del format</li>
+      <li>Selezione degli operatori</li>
+      <li>Composizione del gruppo</li>
+      <li>Comunicazione poetica e coerente</li>
+    </ul>
+    <h4>Cosa chiedo alla struttura</h4>
+    <ul>
+      <li>Spazi adatti a piccoli gruppi</li>
+      <li>Ospitalità genuina e calore</li>
+      <li>Coerenza valoriale</li>
+    </ul>
     </div>
-  </section>
+  </Section>
 
   <!-- ===== PHOTO strumentista/prato ===== -->
-  <div class="full-image">
-    <img
-      src="/images/arpa-prato.jpg"
-      alt="Musicista con arpa in un prato durante un'esperienza MonFarm"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/collab_2.png" alt="Musicista con arpa in un prato durante un'esperienza MonFarm" />
 
   <!-- ===== OPERATORI ===== -->
-  <section class="section collab-block collab-block--cream">
-    <div class="container collab-block__inner">
-      <div class="collab-block__num-wrap" aria-hidden="true">
-        <span class="collab-block__num">→</span>
-      </div>
-      <h2 class="collab-block__title">Collaborazioni con operatori e facilitatori</h2>
-      <p class="collab-block__text">
-        Cerco professionisti che lavorino con presenza e profondità, in piccoli
-        gruppi e con un <strong>approccio umano</strong>, non performativo.
-      </p>
-      <p class="collab-block__text">
-        Ogni esperienza nasce dal dialogo: non si tratta di inserire una singola
-        pratica in un programma, ma di co-creare un percorso armonico.
-      </p>
-
-      <h3 class="profili-title">Profili ricercati</h3>
-      <ul class="profili-list" role="list">
-        <li>Insegnanti di yoga e pratiche dolci</li>
-        <li>Facilitatori di movimento consapevole</li>
-        <li>Arti terapeuti espressivi</li>
-        <li>Journaling e scrittura riflessiva</li>
-        <li>Dialogo guidato e pratiche di ascolto</li>
-        <li>Esploratori della natura (esperti di foraging, botanica, erboristeria)</li>
-        <li>Artigiani o esperti di pratiche manuali lente (ceramica, tessitura, legatoria naturale)</li>
-      </ul>
-    </div>
-  </section>
+  <Section>
+    <h4>Collaborazioni con operatori e facilitatori</h4>
+    <p>
+      Cerco professionisti che lavorino con presenza e profondità, in piccoli
+      gruppi e con un <strong>approccio umano</strong>, non performativo.
+      Ogni esperienza nasce dal dialogo: non si tratta di inserire una singola
+      pratica in un programma, ma di co-creare un percorso armonico.
+    </p>
+    <h4>Profili ricercati</h4>
+    <ul>
+      <li>Insegnanti di yoga e pratiche dolci</li>
+      <li>Facilitatori di movimento consapevole</li>
+      <li>Arti terapeuti espressivi</li>
+      <li>Journaling e scrittura riflessiva</li>
+      <li>Dialogo guidato e pratiche di ascolto</li>
+      <li>Esploratori della natura (foraging, botanica, erboristeria)</li>
+      <li>Artigiani di pratiche manuali lente (ceramica, tessitura, legatoria)</li>
+    </ul>
+  </Section>
 
   <!-- ===== PHOTO gruppo cerchio ===== -->
-  <div class="full-image">
-    <img
-      src="/images/gruppo-cerchio.jpg"
-      alt="Gruppo di persone sedute in cerchio su sedie in un prato"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-
+  <FullImage src="/images/collab_3.png" alt="Gruppo di persone sedute in cerchio su sedie in un prato" />
+  <SectionDivider />
   <!-- ===== FIDUCIA ===== -->
-  <section class="section fiducia-section">
-    <div class="container fiducia-section__inner">
-      <h2 class="fiducia-section__title">
-        Un approccio basato sulla <em>fiducia</em>.
-      </h2>
-      <p>
-        Ogni collaborazione nasce da un incontro e da una visione condivisa.
-      </p>
-      <p>
-        Il processo prevede ascolto, confronto e progettazione congiunta.
-        Non esistono <em>format preconfezionati</em>: ogni esperienza è costruita
-        nel rispetto del luogo, delle persone e dei tempi.
-      </p>
-
-      <div class="fiducia-section__raccontami">
-        <h3 class="fiducia-section__raccontami-title">Raccontami chi sei</h3>
-        <p>
-          Scrivimi per presentarmi il tuo spazio o il tuo lavoro.
-          Il primo passo è una conversazione.
-        </p>
-      </div>
-
-      <!-- Chevron decoration -->
-      <svg class="fiducia-section__chevron" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M5 5 L30 28 L55 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M5 18 L30 41 L55 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-
-      <a href="/contatti" class="btn btn--primary">Vai ai contatti</a>
-    </div>
-  </section>
+  <Section>
+    <h4>Un approccio basato sulla <em>fiducia</em>.</h4>
+    <p>
+      Ogni collaborazione nasce da un incontro e da una visione condivisa.
+    </p>
+    <p>
+      Il processo prevede ascolto, confronto e progettazione congiunta.
+      Non esistono <em>format preconfezionati</em>: ogni esperienza è costruita
+      nel rispetto del luogo, delle persone e dei tempi.
+    </p>
+    <h4>Raccontami chi sei</h4>
+    <p>
+      Scrivimi per presentarmi il tuo spazio o il tuo lavoro.
+      Il primo passo è una conversazione.
+    </p>
+    <Button href="/contatti" text="Vai ai contatti" />
+  </Section>
 
 </Layout>
 

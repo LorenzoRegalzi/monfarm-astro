@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  height?: string;
+}
+
+const { src, alt, height = '50vh' } = Astro.props;
+---
+
+<div class="full-image" style={`height: ${height};`}>
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy"
+    decoding="async"
+  />
+</div>

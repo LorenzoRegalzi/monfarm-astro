@@ -1,0 +1,36 @@
+---
+---
+
+<section class="audience-block">
+  <div class="container audience-block__inner">
+    <slot />
+  </div>
+</section>
+
+<style>
+.audience-block {
+  padding-block: var(--space-xl);
+}
+
+.audience-block__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.audience-block__inner :global(p) {
+  margin-bottom: 20px;
+}
+
+.audience-block__inner :global(ul),
+.audience-block__inner :global(ol) {
+  padding-left: 1.25rem;
+}
+
+.audience-block__inner :global(li) {
+  padding-left: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+
+</style>

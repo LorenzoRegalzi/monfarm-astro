@@ -66,12 +66,12 @@ input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
 /* ---------- Typography ---------- */
-h1, h2, h3, h4 {
+h1, h2, h4 {
   font-family: var(--font-serif);
   color: var(--color-brown);
   line-height: 1.2;
@@ -79,12 +79,7 @@ h1, h2, h3, h4 {
 
 h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
 h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
-h3 { font-size: clamp(1.1rem, 3vw, 1.5rem); }
 
-p {
-  font-size: 1rem;
-  color: var(--color-text);
-}
 
 a {
   color: var(--color-olive);
@@ -136,12 +131,12 @@ a:hover { opacity: 0.75; }
   text-decoration: none;
   text-align: center;
   padding: 0.75rem 2rem;
-  border-radius: 50px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: opacity var(--transition), transform var(--transition);
 }
-.btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn:hover { opacity: 1; filter: brightness(1.25); transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
 .btn--primary {

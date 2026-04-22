@@ -1,4 +1,7 @@
 ---
+import Button from './Button.astro';
+import Section from './Section.astro';
+import SectionDivider from './SectionDivider.astro';
 const navItems = [
   { label: 'Home',              href: '/' },
   { label: 'Il Format',         href: '/il-format' },
@@ -42,6 +45,7 @@ const navItems = [
 
 <!-- Mobile menu overlay -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione" hidden>
+  <SectionDivider />
   <div class="mobile-menu__inner">
 
     <div class="mobile-menu__top">
@@ -67,7 +71,7 @@ const navItems = [
       </ul>
     </nav>
 
-    <a href="/contatti" class="btn btn--primary mobile-menu__cta" style="margin-top: 20px;">Contattaci</a>
+    <div class="mobile-menu__cta"><Button href="/contatti" text="Contattaci" /></div>
 
   </div>
 </div>
@@ -204,6 +208,13 @@ const navItems = [
 .mobile-menu__cta {
   display: block;
   text-align: center;
+  margin-top: auto;
+}
+
+.mobile-menu__cta :global(.btn) {
+  width: 100%;
+  padding-block: 1rem;
+  font-size: 1.1rem;
 }
 </style>
 

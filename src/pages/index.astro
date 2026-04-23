@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionDivider from '../components/SectionDivider.astro';
-import HeroText from '../components/HeroText.astro';
 import Button from '../components/Button.astro';
+import SectionCenter from '../components/SectionCenter.astro';
+import FullImage from '../components/FullImage.astro';
+import Section from '../components/Section.astro';
 ---
 
 <Layout
@@ -10,425 +12,112 @@ import Button from '../components/Button.astro';
   description="MonFarm Experience — Un format di esperienze immersive nella natura, nato per creare connessioni autentiche tra luoghi, persone e pratiche consapevoli."
 >
 
-  <HeroText>
-    Un format di esperienze immersive nella natura,
+  <SectionCenter>
+    <h3>Un format di esperienze immersive nella natura,
         nato per creare <em>connessioni autentiche</em> tra luoghi,
         persone e pratiche consapevoli.
-  </HeroText>
-
+    </h3>
+  </SectionCenter>
   <!-- ===== HERO IMAGE full-width ===== -->
-  <div class="hero-image">
-    <img
-      src="/images/hero2.png"
-      alt="Gruppo di persone in cerchio durante un'esperienza MonFarm nella natura"
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
-    />
-  </div>
+  <FullImage src="/images/hero2.png" alt="Gruppo di persone in cerchio durante un'esperienza MonFarm nella natura" loading="eager" />
 
   <!-- ===== OLIVE BAND ===== -->
-  <section class="olive-band">
-    <div class="container">
-      <h2 class="olive-band__text">Seminiamo valori,<br />raccogliamo benessere.</h2>
-    </div>
-  </section>
+  <SectionCenter bg="olive">
+    <h2>Seminiamo valori,<br />raccogliamo benessere.</h2>
+  </SectionCenter>
 
   <!-- ===== CURA SECTION ===== -->
-  <section class="cura-section">
-    <div class="container cura-section__inner">
-      <h2 class="cura-section__title">
-        Un <em>progetto fatto con cura</em>,<br />non un evento.
-      </h2>
-      <div class="cura-section__image-wrap">
-        <img
-          src="/images/hero-cura.png"
-          alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== INTRO / CHI SIAMO ===== -->
-  <section class="intro-section">
-    <div class="container intro-section__inner">
-      <p class="intro-section__text">
-        MonFarm Experience nasce dal desiderio di rallentare e tornare
-        all'<strong>essenziale</strong>.
-      </p>
-      <p class="intro-section__text">
-        È un format che unisce natura, presenza e pratiche esperienziali,
-        progettato per essere ospitato in luoghi che condividono la
-        stessa <strong>visione</strong>.
-      </p>
-      <p class="intro-section__text">
-        Ogni esperienza viene pensata come un insieme armonico: il luogo,
-        le persone, le pratiche e il tempo si intrecciano per generare
-        uno spazio autentico di <strong>ascolto</strong> e <strong>connessione</strong>.
-      </p>
-    </div>
-  </section>
+  <Section>
+    <h2 style="text-align: center;">
+      Un <em>progetto fatto con cura</em>,<br />non un evento.
+    </h2>
+    <FullImage src="/images/hero-cura.png" alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm" round />
+    <p>
+      MonFarm Experience nasce dal desiderio di rallentare e tornare
+      all'<strong>essenziale</strong>.
+    </p>
+    <p>
+      È un format che unisce natura, presenza e pratiche esperienziali,
+      progettato per essere ospitato in luoghi che condividono la
+      stessa <strong>visione</strong>.
+    </p>
+    <p>
+      Ogni esperienza viene pensata come un insieme armonico: il luogo,
+      le persone, le pratiche e il tempo si intrecciano per generare
+      uno spazio autentico di <strong>ascolto</strong> e <strong>connessione</strong>.
+    </p>
+  </Section>
 
   <!-- ===== APPROCCIO BAND ===== -->
-  <section class="approccio-band">
-    <div class="container approccio-band__inner">
-      <div class="approccio-band__text-wrap">
-        <h2 class="approccio-band__title">Un approccio lento,<br />umano<br />e curato.</h2>
-      </div>
-    </div>
-  </section>
+  <SectionCenter bg="olive-light" align='left'>
+    <h2>Un approccio lento,<br />umano<br />e curato.</h2>
+  </SectionCenter>
 
   <!-- ===== APPROCCIO IMAGE ===== -->
-  <div class="approccio-image">
-    <img
-      src="/images/approccio.png"
-      alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/approccio.png" alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta" />
 
   <!-- ===== VALORI ===== -->
-  <section class="valori-section">
-    <div class="container">
-      <div class="valori-item">
-        <h3 class="valori-item__title">Cura</h3>
-        <p class="valori-item__text">Ogni dettaglio viene pensato con attenzione: dalla scelta del luogo alla composizione del gruppo, fino alla qualità della presenza condivisa.</p>
-      </div>
-      <div class="valori-item">
-        <h3 class="valori-item__title">Co-creazione</h3>
-        <p class="valori-item__text">Le esperienze nascono dal dialogo tra struttura, operatori e partecipanti. Non sono format rigidi, ma processi vivi.</p>
-      </div>
-      <div class="valori-item">
-        <h3 class="valori-item__title">Piccoli gruppi</h3>
-        <p class="valori-item__text">Crediamo nel valore dell'intimità e della qualità relazionale. Lavoriamo con numeri contenuti per preservare autenticità e profondità.</p>
-      </div>
-    </div>
-  </section>
+  <Section bg='olive'>
+    <h3>Cura</h3>
+    <p>Ogni dettaglio viene pensato con attenzione: dalla scelta del luogo alla composizione del gruppo, fino alla qualità della presenza condivisa.</p>
 
-  <section class="hero-text">
-    <div class="container">
-      <h1 class="hero-text__title">
-        A chi si rivolge MonFarm Experience
-      </h1>
-    </div>
-  </section>
+    <h3>Co-creazione</h3>
+    <p>Le esperienze nascono dal dialogo tra struttura, operatori e partecipanti. Non sono format rigidi, ma processi vivi.</p>
+
+    <h3>Piccoli gruppi</h3>
+    <p>Crediamo nel valore dell'intimità e della qualità relazionale. Lavoriamo con numeri contenuti per preservare autenticità e profondità.</p>
+  </Section>
+
+  <SectionCenter>
+    <h2>
+      A chi si rivolge MonFarm Experience
+    </h2>
+  </SectionCenter>
 
   <SectionDivider />
 
-  <section class="audience-intro">
-    <div class="container">
-      <h2 class="audience-intro__title">Strutture immerse nella natura</h2>
-      <p class="audience-intro__text">
-        Agriturismi, tenute, relais e luoghi che desiderano ospitare esperienze curate  e coerenti con i propri valori.
+ <Section>
+      <h4>Strutture immerse nella natura</h4>
+      <p>
+        Agriturismi, tenute, relais e luoghi che desiderano ospitare esperienze curate e coerenti con i propri valori.
       </p>
-    </div>
-  </section>
+  </Section>
 
-   <!-- ===== APPROCCIO IMAGE ===== -->
-  <div class="approccio-image">
-    <img
-      src="/images/pool.png"
-      alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/pool.png" alt="Piscina circondata da alberi e sedie, atmosfera rilassante" />
 
   <SectionDivider />
 
-  <section class="audience-intro">
-    <div class="container">
-      <h2 class="audience-intro__title">Operatori e facilitatori</h2>
-      <p class="audience-intro__text">
-        Professionisti che accompagnano le persone attraverso pratiche corporee,espressive o di consapevolezza.
+  <Section>
+      <h4>Operatori e facilitatori</h4>
+      <p>
+        Professionisti che accompagnano le persone attraverso pratiche corporee, espressive o di consapevolezza.
       </p>
-    </div>
-  </section>
+  </Section>
 
-  <div class="approccio-image">
-    <img
-      src="/images/woman-walk.png"
-      alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/woman-walk.png" alt="Donna che cammina nella natura" />
 
   <SectionDivider />
 
-  
+    <Section>
 
-   <section class="audience-intro">
-    <div class="container">
-      <h2 class="audience-intro__title">Persone e gruppi</h2>
-      <p class="audience-intro__text">
+      <h4 >Persone e gruppi</h4>
+      <p>
         Chi sente il bisogno di fermarsi, respirare e riconnettersi in un contesto autentico.
       </p>
-    </div>
-  </section>
+</Section>
 
-  <div class="approccio-image">
-    <img
-      src="/images/grass-meditation.png"
-      alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/grass-meditation.png" alt="Persona in meditazione sull'erba" />
+
   <!-- ===== CTA SECTION ===== -->
-  <section class="home-cta">
-    <div class="container home-cta__inner">
-      <Button href="/esperienze" text="Scopri di più" />
-      <p class="home-cta__text">
-        <em>Se senti che potrebbe esserci una sintonia, iniziamo a parlarne. Ogni collaborazione nasce da un incontro. Raccontami il tuo spazio, il tuo lavoro o la tua visione.</em>
-      </p>
-      <Button href="/collabora" text="Collabora" />
+  <SectionCenter bg="olive">
+    <div style="position: relative;bottom: 65px;">
+    <Button  href="/esperienze" text="Scopri di più" />
     </div>
-  </section>
+
+    <h3>
+      <em>Se senti che potrebbe esserci una sintonia, iniziamo a parlarne. Ogni collaborazione nasce da un incontro. Raccontami il tuo spazio, il tuo lavoro o la tua visione.</em>
+    </h3>
+    <Button href="/collabora" text="Collabora" />
+  </SectionCenter>
 
 </Layout>
-
-<style>
-/* ---- Hero text ---- */
-.hero-text {
-  padding-block: var(--space-xl) var(--space-lg);
-  text-align: center;
-}
-
-.hero-text__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.45rem, 5vw, 2.2rem);
-  font-weight: 400;
-  line-height: 1.45;
-  color: var(--color-brown);
-  max-width: 560px;
-  margin-inline: auto;
-}
-
-.hero-text__title em {
-  font-style: italic;
-}
-
-.divider-hero {
-  background-color: var(--color-brown)
-}
-
-/* ---- Hero image full-width ---- */
-.hero-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- Olive band ---- */
-.olive-band {
-  background-color: var(--color-cream);
-  padding-block: var(--space-xl);
-  text-align: center;
-}
-
-.olive-band__text {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 5vw, 2.2rem);
-  color: var(--color-brown);
-  line-height: 1.3;
-}
-
-/* ---- Cura section ---- */
-.cura-section {
-  padding-block: var(--space-xl);
-  text-align: center;
-}
-
-.cura-section__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-}
-
-.cura-section__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 5vw, 2rem);
-  font-weight: 700;
-  color: var(--color-brown);
-  line-height: 1.35;
-}
-
-.cura-section__title em {
-  font-style: italic;
-}
-
-.cura-section__image-wrap {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.cura-section__image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- Intro text section ---- */
-.intro-section {
-  padding-block: var(--space-xl);
-}
-
-.intro-section__inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.intro-section__text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-brown);
-}
-
-.intro-section__text strong {
-  font-weight: 700;
-}
-
-/* ---- Approccio band ---- */
-.approccio-band {
-  background-color: var(--color-olive-light);
-  padding-block: var(--space-xl);
-  border-top: 1px solid var(--color-cream-bg);
-}
-
-.approccio-band__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-lg);
-}
-
-.approccio-band__title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(1.6rem, 6vw, 2.5rem);
-  color: var(--color-brown);
-  line-height: 1.2;
-}
-
-.approccio-band__lotus {
-  width: 110px;
-  height: auto;
-  color: rgba(255,255,255,0.6);
-  flex-shrink: 0;
-}
-
-/* ---- Approccio image ---- */
-.approccio-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-
-.approccio-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- Home CTA ---- */
-.home-cta {
-  background-color: var(--color-cream);
-  padding-block: var(--space-xl);
-  padding-top: 0;
-  text-align: center;
-}
-
-.home-cta__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-}
-
-.home-cta__text {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  color: var(--color-brown);
-  max-width: 400px;
-}
-
-.home-cta__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  justify-content: center;
-}
-
-.home-cta__insta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* ---- Audience intro ---- */
-.audience-intro {
-  padding-block: var(--space-xl);
-}
-
-.audience-intro__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.3rem, 4vw, 1.8rem);
-  font-weight: 700;
-  color: var(--color-brown);
-  margin-bottom: var(--space-sm);
-  text-align: left;
-}
-
-.audience-intro__text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-brown);
-  text-align: left;
-  max-width: 560px;
-}
-
-/* ---- Valori ---- */
-.valori-section {
-  background-color: var(--color-olive);
-  padding-block: var(--space-xl);
-}
-
-.valori-section .container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
-.valori-item__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 4vw, 1.6rem);
-  font-weight: 600;
-  color: var(--color-cream-bg);
-  margin-bottom: var(--space-xs);
-}
-
-.valori-item__text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-cream-bg);
-  opacity: 0.85;
-  text-align: justify;
-}
-</style>

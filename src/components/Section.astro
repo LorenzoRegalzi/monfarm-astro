@@ -1,7 +1,12 @@
 ---
+interface Props {
+  bg?: 'olive';
+}
+
+const { bg } = Astro.props;
 ---
 
-<section class="audience-block">
+<section class:list={['audience-block', { 'audience-block--olive': bg === 'olive' }]}>
   <div class="container audience-block__inner">
     <slot />
   </div>
@@ -32,5 +37,11 @@
   margin-bottom: 0.5rem;
 }
 
+.audience-block--olive {
+  background-color: var(--color-olive);
+}
 
+.audience-block--olive :global(*) {
+  color: var(--color-cream);
+}
 </style>

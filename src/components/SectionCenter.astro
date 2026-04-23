@@ -1,8 +1,14 @@
 ---
+interface Props {
+  bg?: 'olive' | 'olive-light' | 'olive-dark';
+  align?: 'left';
+}
+
+const { bg, align } = Astro.props;
 ---
 
-<section class="section-center">
-  <div class="container section-center__inner">
+<section class:list={['section-center', { 'section-center--olive': bg === 'olive', 'section-center--olive-light': bg === 'olive-light', 'section-center--olive-dark': bg === 'olive-dark' }]}>
+  <div class:list={['container section-center__inner', { 'section-center__inner--left': align === 'left' }]}>
     <slot />
   </div>
 </section>
@@ -18,5 +24,34 @@
   align-items: center;
   gap: var(--space-sm);
   text-align: center;
+}
+
+.section-center__inner--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-center--olive {
+  background-color: var(--color-cream);
+}
+
+.section-center--olive :global(h2) {
+  color: var(--color-brown);
+}
+
+.section-center--olive-light {
+  background-color: var(--color-olive-light);
+}
+
+.section-center--olive-light :global(h2) {
+  color: var(--color-brown);
+}
+
+.section-center--olive-dark {
+  background-color: var(--color-olive);
+}
+
+.section-center--olive-dark :global(*) {
+  color: var(--color-cream);
 }
 </style>

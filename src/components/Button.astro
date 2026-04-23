@@ -1,10 +1,15 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
   text: string;
+  type?: 'submit' | 'button';
 }
 
-const { href, text } = Astro.props;
+const { href, text, type = 'submit' } = Astro.props;
 ---
 
-<a href={href} class="btn btn--primary">{text}</a>
+{href ? (
+  <a href={href} class="btn btn--primary">{text}</a>
+) : (
+  <button type={type} class="btn btn--primary">{text}</button>
+)}

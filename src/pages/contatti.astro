@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import ContactForm from '../components/ContactForm.astro';
+import SectionCenter from '../components/SectionCenter.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import FullImage from '../components/FullImage.astro';
 ---
 
 <Layout
@@ -11,32 +14,23 @@ import ContactForm from '../components/ContactForm.astro';
 
   <PageHeader title="Contatti" />
 
-  <!-- ===== INTRO ===== -->
-  <section class="section contatti-intro">
-    <div class="container">
-      <p class="contatti-intro__text">
-        Se senti che MonFarm Experience potrebbe essere in sintonia con il tuo
-        spazio, il tuo lavoro o il tuo percorso, scrivimi.
-      </p>
-      <p class="contatti-intro__quote">
-        <em>Ogni collaborazione nasce da una conversazione.</em><br />
-        Raccontami chi sei, cosa fai e cosa ti piacerebbe costruire insieme.
-      </p>
-      <p class="contatti-intro__personal">
-        Ti risponderò <strong>personalmente</strong>.
-      </p>
-    </div>
-  </section>
+  <SectionCenter>
+    <h3>
+      Se senti che MonFarm Experience potrebbe essere in sintonia con il tuo
+      spazio, il tuo lavoro o il tuo percorso, scrivimi.
+    <h3/>
+        <h3>
+       <em>Ogni collaborazione nasce da una conversazione.
+        Raccontami chi sei, cosa fai e cosa ti piacerebbe costruire insieme.</em>
+        <br />
+        </h3>
+          <h3>
+      Ti risponderò personalmente.
+    </h3>
+  </SectionCenter>
 
   <!-- ===== BEATRICE PHOTO ===== -->
-  <div class="full-image">
-    <img
-      src="/images/beatrice-campo.jpg"
-      alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  <FullImage src="/images/contact_1.png" alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm" />
 
   <!-- ===== FORM ===== -->
   <section class="section contatti-form-section">
@@ -45,28 +39,29 @@ import ContactForm from '../components/ContactForm.astro';
     </div>
   </section>
 
-  <!-- ===== EMAIL DIRETTO ===== -->
-  <section class="section email-section">
-    <div class="container email-section__inner">
-      <p class="email-section__label">Preferisci scrivere direttamente?</p>
-      <a
-        href="mailto:info@monfarmexperience.it"
-        class="email-section__address"
-      >
-        info@monfarmexperience.it
-      </a>
-    </div>
-  </section>
+  <SectionDivider />
 
   <!-- ===== RELAZIONALE QUOTE ===== -->
-  <section class="relazionale-quote">
-    <div class="container">
-      <p class="relazionale-quote__text">
+  <SectionCenter>
+      <h2>
         MonFarm Experience è un <em>progetto relazionale</em>:
         ogni incontro è il punto di partenza.
-      </p>
+      </h2>
     </div>
-  </section>
+  </SectionCenter>
+  <FullImage src="/images/contact_2.png" alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm" />
+
+ 
+
+
+   <SectionCenter>
+    <h3>
+     Preferisci scrivere direttamente?
+    <h3/>
+    <h3>
+      <a href="mailto:info@monfarmexperience.it">info@monfarmexperience.it</a>
+    </h3>
+  </SectionCenter>
 
 </Layout>
 

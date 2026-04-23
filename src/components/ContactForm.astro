@@ -1,14 +1,13 @@
 ---
 // Contact form component
 // Submissions handled via Netlify Forms or a custom endpoint
+import Button from './Button.astro';
 ---
 
 <form
   class="contact-form"
-  name="contatti"
   method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
+  action="/api/contact"
   novalidate
   id="contact-form"
 >
@@ -118,9 +117,7 @@
   </div>
 
   <div class="contact-form__submit">
-    <button type="submit" class="btn btn--primary contact-form__btn">
-      Invia messaggio
-    </button>
+    <Button text="Invia messaggio" type="submit" />
   </div>
 
   <!-- Success / error messages (shown via JS) -->
@@ -289,24 +286,24 @@
       e.preventDefault();
       const successMsg = form.querySelector('.contact-form__success') as HTMLElement;
       const errorMsg   = form.querySelector('.contact-form__error') as HTMLElement;
-      const btn        = form.querySelector('.contact-form__btn') as HTMLButtonElement;
+      const btn        = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 
       btn.disabled = true;
       btn.textContent = 'Invio in corso…';
 
       try {
-        const data = new FormData(form);
-        const res  = await fetch(form.action || '/', {
+        const res = await fetch('/api/contact', {
           method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' },
+          body: new FormData(form),
         });
-        if (res.ok) {
+        const json = await res.json();
+
+        if (res.ok && json.ok) {
           form.reset();
           successMsg.hidden = false;
           errorMsg.hidden = true;
         } else {
-          throw new Error('Server error');
+          throw new Error(json.error ?? 'Server error');
         }
       } catch {
         errorMsg.hidden = false;

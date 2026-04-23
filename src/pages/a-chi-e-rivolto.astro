@@ -5,6 +5,7 @@ import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
 import FullImage from '../components/FullImage.astro';
 import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
+import SectionCenter from '../components/SectionCenter.astro';
 ---
 
 <Layout
@@ -20,14 +21,12 @@ import Section from '../components/Section.astro';
   <FullImage src="/images/nature.png" alt="Scalinata immersa nella vegetazione rigogliosa" height="50vh" />
 
    <!-- ===== INTRO ===== -->
-  <section class="section audience-intro">
-    <div class="container">
-      <p class="audience-intro__text">
-        MonFarm Experience nasce per creare connessioni tra luoghi,
-        professionisti e persone che condividono una stessa <em>visione</em>.
-      </p>
-    </div>
-  </section>
+  <SectionCenter>
+    <h3>
+      MonFarm Experience nasce per creare connessioni tra luoghi,
+      professionisti e persone che condividono una stessa <em>visione</em>.
+    </h3>
+  </SectionCenter>
 
   <SectionDividerNoBar />
 
@@ -36,8 +35,8 @@ import Section from '../components/Section.astro';
 
 
   <Section>
-    <h2 >Strutture immerse nella natura</h2>
-    <p >
+    <h4>Strutture immerse nella natura</h4>
+    <p>
       Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
       nella natura e senti il desiderio di ospitare esperienze curate, lente e
       coerenti con i tuoi valori, MonFarm Experience può diventare un partner
@@ -52,7 +51,7 @@ import Section from '../components/Section.astro';
 
 
   <Section>
-    <h2 >Operatori e facilitatori</h2>
+    <h4>Operatori e facilitatori</h4>
     <p >
       Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
       journaling, dialogo guidato o arti espressive, e credi nel valore della
@@ -62,7 +61,7 @@ import Section from '../components/Section.astro';
       Cerco professionisti che lavorino in presenza, con gruppi piccoli e con
       un approccio umano e non performativo.
     </p>
-    <p class="audience-block__emphasis">
+    <p>
       Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
     </p>
     <Button href="/collabora" text="Collabora come operatore" />
@@ -74,7 +73,7 @@ import Section from '../components/Section.astro';
 
   <!-- ===== PERSONE E GRUPPI ===== -->
   <Section>
-    <h2>Persone e gruppi</h2>
+    <h4>Persone e gruppi</h4>
     <p >
       Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
       contesto autentico.
@@ -84,7 +83,7 @@ import Section from '../components/Section.astro';
       vivere un'esperienza immersiva nella natura, lontano dai ritmi accelerati.
       Le esperienze vengono comunicate di volta in volta attraverso i canali dedicati.
     </p>
-    <p class="audience-block__note">
+    <p>
       Questo sito non propone prenotazioni o vendite dirette, ma racconta il
       progetto e le sue collaborazioni.
     </p>
@@ -92,107 +91,3 @@ import Section from '../components/Section.astro';
 
 </Layout>
 
-<style>
-/* ---- Intro ---- */
-.audience-intro {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-a {
-  text-align: center;
-}
-
-.audience-intro__text {
-  font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 4vw, 1.5rem);
-  font-weight: 400;
-  line-height: 1.55;
-  color: var(--color-brown);
-  max-width: 500px;
-  margin-inline: auto;
-}
-
-.audience-intro__text em {
-  font-style: italic;
-}
-
-/* ---- Full-width image ---- */
-.full-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-
-.full-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- Audience blocks ---- */
-.audience-block {
-  padding-block: var(--space-xl);
-}
-
-.audience-block--cream {
-  background-color: var(--color-cream);
-}
-
-.audience-block__inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.audience-block__accent-bar {
-  width: 48px;
-  height: 3px;
-  background-color: var(--color-olive);
-  margin-bottom: var(--space-xs);
-}
-
-.audience-block__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.3rem, 4vw, 1.9rem);
-  font-weight: 600;
-  color: var(--color-brown);
-  line-height: 1.25;
-}
-
-.audience-block__text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-text-light);
-}
-
-.audience-block__emphasis {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-brown);
-  line-height: 1.6;
-}
-
-.audience-block__note {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--color-brown);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.audience-block__cta {
-  align-self: flex-start;
-  margin-top: var(--space-xs);
-}
-
-/* ---- Discover CTA ---- */
-.audience-discover {
-  padding-block: var(--space-lg);
-}
-
-.audience-discover__inner {
-  display: flex;
-  justify-content: center;
-}
-</style>

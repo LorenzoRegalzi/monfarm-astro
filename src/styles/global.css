@@ -154,10 +154,3 @@ a:hover { opacity: 0.75; }
 .section {
   padding-block: var(--space-xl);
 }
-
-/* ---------- Divider ---------- */
-.divider {
-  border: none;
-  border-top: 1px solid var(--color-cream);
-  margin-block: var(--space-lg);
-}

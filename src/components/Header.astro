@@ -65,7 +65,7 @@ const navItems = [
       <ul class="mobile-menu__list" role="list">
         {navItems.map(item => (
           <li>
-            <a href={item.href} class="mobile-menu__link">{item.label.toUpperCase()}</a>
+            <a href={item.href} class="mobile-menu__link text-nav text-nav--light">{item.label}</a>
           </li>
         ))}
       </ul>
@@ -186,10 +186,7 @@ const navItems = [
 
 .mobile-menu__link {
   display: block;
-  font-family: var(--font-sans);
   font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
   color: var(--color-brown);
   text-decoration: none;
   padding-block: var(--space-sm);

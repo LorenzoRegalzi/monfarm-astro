@@ -1,16 +1,14 @@
 /* =============================================
    MONFARM EXPERIENCE — Typography System
-   Font 1 (Serif):     Baskerville URW
-   Font 2 (Sans-serif): Proxima Nova
-
-   Caricamento font richiesto:
-   - Self-host in /public/fonts/ con @font-face, oppure
-   - Incolla il codice embed di Adobe Fonts nel <head> di Layout.astro
+   Serif:  Cormorant Garamond  (--font-serif) font che si avvicina di più a quello richiesto
+   Sans:   Montserrat          (--font-sans) font che si avvicina di più a quello richiesto
    ============================================= */
 
+/* ---------- Utilities ---------- */
+.text-center { text-align: center; }
+
 /* ------------------------------------------------------------------
-   1. MENU DI NAVIGAZIONE
-   Proxima Nova · Regular/Medium · ALL CAPS · letter-spacing
+   1. NAVIGAZIONE
    ------------------------------------------------------------------ */
 .text-nav {
   font-family: var(--font-sans);
@@ -18,114 +16,241 @@
   font-size: 0.9rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.35;
+}
+
+.text-nav--light {
+  font-weight: 300;
+  letter-spacing: 0.1em;
 }
 
 /* ------------------------------------------------------------------
-   2. TITOLI DI SEZIONE PRINCIPALI — H1
-   Baskerville URW · Regular · Iniziale maiuscola
-   Es. "Il format", "A chi è rivolto", "Collabora"
+   2. TITOLO PAGINA
    ------------------------------------------------------------------ */
-.text-h1 {
+.text-title {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: clamp(2rem, 6vw, 3.2rem);
   line-height: 1.15;
+  margin-block-start: 0.2em;
+  margin-inline-end: 0.2em;
+  padding: 0;
   color: var(--color-brown);
 }
 
 /* ------------------------------------------------------------------
-   3. SOTTOTITOLI / FRASI D'IMPATTO — H2
-   Baskerville URW · Regular · Iniziale maiuscola
+   3. FRASI D'IMPATTO / DISPLAY
    ------------------------------------------------------------------ */
-.text-h2 {
+.text-display {
   font-family: var(--font-serif);
   font-weight: 400;
   font-style: normal;
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  line-height: 1.25;
+  line-height: 1.4;
   color: var(--color-brown);
 }
 
-/* Variante corsivo — per frasi poetiche/evocative */
-.text-h2--italic {
+.text-display--italic {
   font-family: var(--font-serif);
   font-weight: 400;
   font-style: italic;
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  line-height: 1.3;
+  line-height: 1.45;
   color: var(--color-brown);
 }
 
+.text-display--lg {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.45;
+}
+
+.text-display em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-style: italic;
+}
+
 /* ------------------------------------------------------------------
-   4. TITOLI TERZIANTI — H3
-   Baskerville URW · Regular
+   4. TESTO INTRODUTTIVO
    ------------------------------------------------------------------ */
-.text-h3, h3 {
+.text-intro {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: clamp(1.15rem, 3vw, 1.5rem);
-  line-height: 1.3;
+  line-height: 1.45;
   color: var(--color-brown);
 }
 
-h3 em {
+.text-intro em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-style: italic;
+}
+
+.text-intro a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.text-intro--olive {
+  color: var(--color-olive);
+  font-size: clamp(1.25rem, 3.4vw, 1.65rem);
+}
+
+.text-intro--olive a {
+  color: var(--color-olive);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------
+   5. LEAD COPY
+   ------------------------------------------------------------------ */
+.text-lead {
+  font-family: var(--font-sans);
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  line-height: 1.45;
+  color: var(--color-brown);
+}
+
+.text-lead--italic {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  line-height: 1.45;
+  color: var(--color-brown);
+}
+
+.text-lead--olive {
+  color: var(--color-olive);
+  font-weight: 300;
+}
+
+.text-lead strong,
+.text-lead--italic strong {
+  font-weight: inherit;
+}
+
+.text-lead--olive strong {
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------
+   6. TITOLI DI SOTTOSEZIONE
+   ------------------------------------------------------------------ */
+.text-subsection {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--color-brown);
+}
+
+.text-subsection em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
   font-style: italic;
 }
 
 /* ------------------------------------------------------------------
-   5. CORPO DEL TESTO
-   Proxima Nova · Regular · Normale
+   7. CORPO DEL TESTO
    ------------------------------------------------------------------ */
-.text-body, p {
+.text-body,
+p {
   font-family: var(--font-sans);
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.95;
   color: var(--color-text);
 }
 
+.text-small {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.text-muted {
+  color: var(--color-text-light);
+}
+
 /* ------------------------------------------------------------------
-   6. CORSIVO NEL CORPO
-   Proxima Nova · Italic
-   Es. "Non esistono format preconfezionati"
-       "Ogni collaborazione nasce da una conversazione"
+   8. CORSIVO NEL CORPO
    ------------------------------------------------------------------ */
-.text-body--italic, p em {
+.text-body--italic,
+p em {
   font-family: var(--font-sans);
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.55;
   color: var(--color-text);
 }
 
 /* ------------------------------------------------------------------
-   7. BOTTONI / CALL TO ACTION
-   Baskerville URW · Regular · Iniziale maiuscola
-   Es. "Scopri di più", "Vai ai contatti"
+   9. LABEL / CAPTION
    ------------------------------------------------------------------ */
-.text-btn {
+.text-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------
+   10. CALL TO ACTION
+   ------------------------------------------------------------------ */
+.text-cta {
   font-family: var(--font-serif);
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  line-height: 1.35;
 }
 
 /* ------------------------------------------------------------------
-   8. FORM — label, input, select
-   Proxima Nova · Regular · Iniziale maiuscola
+   11. FORM
    ------------------------------------------------------------------ */
 .text-form {
   font-family: var(--font-sans);
   font-weight: 400;
   font-style: normal;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.65;
   color: var(--color-text);
+}
+
+/* Label serif per campi form — condivisa con placeholder via token */
+.text-form-label {
+  font-family: var(--form-field-font);
+  font-weight: var(--form-field-weight);
+  font-size: var(--form-field-size);
+  line-height: var(--form-field-line-height);
+  color: var(--form-field-color);
+}
+
+.text-form-label--sm {
+  font-size: clamp(1rem, 2vw, 1.15rem);
 }

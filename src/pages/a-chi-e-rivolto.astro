@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
-import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 import FullImage from '../components/FullImage.astro';
 import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
@@ -22,20 +22,20 @@ import SectionCenter from '../components/SectionCenter.astro';
 
    <!-- ===== INTRO ===== -->
   <SectionCenter>
-    <h3>
+    <p class="text-intro">
       MonFarm Experience nasce per creare connessioni tra luoghi,
       professionisti e persone che condividono una stessa <em>visione</em>.
-    </h3>
+    </p>
   </SectionCenter>
 
-  <SectionDividerNoBar />
+  <SectionDivider bar={false} />
 
   <FullImage src="/images/a-chi-e-rivolto/a-chi-2.webp" alt="Scalinata immersa nella vegetazione rigogliosa" height="20vh" />
 
 
 
   <Section>
-    <h4>Strutture immerse nella natura</h4>
+    <h4 class="text-subsection">Strutture immerse nella natura</h4>
     <p>
       Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
       nella natura e senti il desiderio di ospitare esperienze curate, lente e
@@ -45,13 +45,13 @@ import SectionCenter from '../components/SectionCenter.astro';
     <Button href="/collabora" text="Proponi la tua struttura" />
   </Section>
 
-   <SectionDividerNoBar />
+   <SectionDivider bar={false} />
 
   <FullImage src="/images/a-chi-e-rivolto/a-chi-3.webp" alt="Falò acceso in un contesto naturale" height="20vh" />
 
 
   <Section>
-    <h4>Operatori e facilitatori</h4>
+    <h4 class="text-subsection">Operatori e facilitatori</h4>
     <p >
       Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
       journaling, dialogo guidato o arti espressive, e credi nel valore della
@@ -67,13 +67,13 @@ import SectionCenter from '../components/SectionCenter.astro';
     <Button href="/collabora" text="Collabora come operatore" />
   </Section>
 
- <SectionDividerNoBar />
+ <SectionDivider bar={false} />
 
   <FullImage src="/images/a-chi-e-rivolto/a-chi-4.webp" alt="Persona in riposo immersa nella natura" height="20vh" />
 
   <!-- ===== PERSONE E GRUPPI ===== -->
   <Section>
-    <h4>Persone e gruppi</h4>
+    <h4 class="text-subsection">Persone e gruppi</h4>
     <p >
       Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
       contesto autentico.

@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
 import FullImage from '../components/FullImage.astro';
-import SectionDividerNoBar from '../components/SectionDividerNoBar.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 
 const esperienze = [
   {
@@ -56,8 +56,8 @@ const esperienze = [
     <>
       <FullImage src={exp.image} alt={exp.imageAlt} height="30vh" />
       <Section>
-        <h2>{exp.date}</h2>
-        <h2>{exp.title}</h2>
+        <p class="text-display">{exp.date}</p>
+        <p class="text-display">{exp.title}</p>
         <p>
           {exp.location}<br />
           {exp.city}
@@ -65,7 +65,7 @@ const esperienze = [
         <p>{exp.description}</p>
         <Button href={exp.instagramUrl} text="Scopri com'è andata" />
       </Section>
-      {i < esperienze.length - 1 && <SectionDividerNoBar />}
+      {i < esperienze.length - 1 && <SectionDivider bar={false} />}
     </>
   ))}
  

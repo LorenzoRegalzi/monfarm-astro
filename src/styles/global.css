@@ -1,24 +1,24 @@
 /* =============================================
    MONFARM EXPERIENCE — Global Styles
-   Design system extracted from InDesign mockup
    ============================================= */
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
   /* Brand colours */
-  --color-brown:     #715b43;
-  --color-cream:     #dfd3bd;
-  --color-cream-bg:  #ede7d9;
-  --color-olive:     #828259;
+  --color-brown:       #715b43;
+  --color-cream:       #dfd3bd;
+  --color-cream-bg:    #ede7d9;
+  --color-olive:       #828259;
   --color-olive-light: #98926E;
-  --color-terracotta:#c97542;
-  --color-white:     #ffffff;
-  --color-text:      #715b43;
-  --color-text-light:#9e8a70;
+  --color-terracotta:  #c97542;
+  --color-white:       #ffffff;
+  --color-text:        #715b43;
+  --color-text-light:  #9e8a70;
 
   /* Typography */
-  --font-serif:  'Baskerville URW', 'Baskerville', 'Big Caslon', Georgia, serif;
-  --font-sans:   'Proxima Nova', 'Proxima Nova A', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans:  "Montserrat", sans-serif;
+  --line-height-base: 1.75;
 
   /* Spacing */
   --space-xs:  0.5rem;
@@ -30,10 +30,18 @@
 
   /* Layout */
   --max-width: 720px;
+  --container-padding-inline: 2.25rem;
   --border-radius: 4px;
 
   /* Transition */
   --transition: 0.25s ease;
+
+  /* Form fields — shared by label, placeholder e input */
+  --form-field-font: var(--font-serif);
+  --form-field-size: clamp(1.2rem, 3vw, 1.5rem);
+  --form-field-weight: 400;
+  --form-field-color: var(--color-brown);
+  --form-field-line-height: 1.45;
 }
 
 /* ---------- Reset ---------- */
@@ -52,7 +60,7 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-cream-bg);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: var(--line-height-base);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -66,20 +74,9 @@ input, button, textarea, select {
   font: inherit;
 }
 
-h1, h2, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
-
-/* ---------- Typography ---------- */
-h1, h2, h4 {
-  font-family: var(--font-serif);
-  color: var(--color-brown);
-  line-height: 1.2;
-}
-
-h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
-
 
 a {
   color: var(--color-olive);
@@ -88,15 +85,95 @@ a {
 }
 a:hover { opacity: 0.75; }
 
-/* ---------- Utility ---------- */
+/* ---------- Layout ---------- */
 .container {
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
-  padding-inline: var(--space-md);
+  padding-inline: var(--container-padding-inline);
 }
 
-/* Full-width image strips (used across multiple pages) */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack--flush { gap: 0; }
+.stack--sm    { gap: var(--space-sm); }
+.stack--md    { gap: var(--space-md); }
+.stack--lg    { gap: var(--space-lg); }
+.stack--center { align-items: center; text-align: center; }
+.stack--left   { align-items: flex-start; text-align: left; }
+
+.stack--tight p {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section--compact {
+  padding-block: var(--space-md);
+}
+
+.section--olive {
+  background-color: var(--color-olive);
+}
+
+.section--olive :is(p, .text-intro, .text-subsection, em, strong) {
+  color: var(--color-cream);
+}
+
+.section--olive a {
+  color: var(--color-cream);
+}
+
+.section__inner p {
+  margin-bottom: 1.25rem;
+}
+
+.section__inner ul,
+.section__inner ol {
+  padding-left: 1.25rem;
+}
+
+.section__inner li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-center--olive {
+  background-color: var(--color-cream);
+}
+
+.section-center--olive-light {
+  background-color: var(--color-olive-light);
+}
+
+.section-center--olive-dark {
+  background-color: var(--color-olive);
+}
+
+.section-center--olive-dark :is(*) {
+  color: var(--color-cream);
+}
+
+/* ---------- Full-width images ---------- */
 .full-image {
   width: 100%;
   overflow: hidden;
@@ -107,31 +184,41 @@ a:hover { opacity: 0.75; }
   height: 100%;
   object-fit: cover;
   display: block;
+  background-color: var(--color-cream);
+  opacity: 0.47;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border-width: 0;
+.full-image--round {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.full-image--round img {
+  opacity: 1;
+}
+
+/* ---------- Section divider ---------- */
+.section-divider__band {
+  background-color: var(--color-cream);
+  height: 70px;
+}
+
+.section-divider__bar {
+  height: 10px;
+  width: 60px;
+  background-color: var(--color-olive);
 }
 
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
   text-decoration: none;
   text-align: center;
-  padding: 0.75rem 2rem;
-  border-radius: 10px;
+  padding: 0.7rem 2.5rem;
+  border-radius: 2rem;
   border: none;
   cursor: pointer;
   transition: opacity var(--transition), transform var(--transition);
@@ -150,7 +237,242 @@ a:hover { opacity: 0.75; }
   color: var(--color-olive);
 }
 
-/* ---------- Section spacing ---------- */
-.section {
-  padding-block: var(--space-xl);
+/* ---------- Page patterns ---------- */
+.cta-pull {
+  position: relative;
+  bottom: 65px;
+}
+
+.mi-presento__title {
+  text-align: center;
+  position: relative;
+  top: 29px;
+}
+
+.mi-presento__info {
+  margin-bottom: 100px;
+}
+
+.mi-presento__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.build-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.build-item {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.build-item__icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  color: var(--color-text-light);
+}
+
+.build-item__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Prose (legal / long-form) ---------- */
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 680px;
+}
+
+.prose h2 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-brown);
+  border-bottom: 1px solid var(--color-cream);
+  padding-bottom: var(--space-xs);
+}
+
+.prose :is(p, li) {
+  line-height: 1.8;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+.prose ul {
+  list-style: disc;
+  padding-left: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.prose a {
+  color: var(--color-olive);
+}
+
+.section--no-bottom {
+  padding-bottom: 0;
+}
+
+.prose-lead {
+  max-width: 520px;
+  margin-top: var(--space-sm);
+}
+
+.prose--update {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  opacity: 0.75;
+}
+
+/* ---------- Form controls ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-line,
+.input-box {
+  width: 100%;
+  background: transparent;
+  font-family: var(--form-field-font);
+  font-size: var(--form-field-size);
+  font-weight: var(--form-field-weight);
+  color: var(--form-field-color);
+  line-height: var(--form-field-line-height);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input-line::placeholder {
+  font-family: var(--form-field-font);
+  font-size: var(--form-field-size);
+  font-weight: var(--form-field-weight);
+  color: var(--form-field-color);
+  opacity: 1;
+}
+
+.input-line {
+  border: none;
+  border-bottom: 1px solid var(--color-brown);
+  border-radius: 0;
+  padding: 0.4rem 0;
+}
+
+.input-line:focus {
+  border-bottom-color: var(--color-olive);
+}
+
+.input-box {
+  resize: vertical;
+  min-height: 140px;
+  border: 1px solid var(--color-brown);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+}
+
+.input-box:focus {
+  border-color: var(--color-olive);
+}
+
+.select {
+  position: relative;
+}
+
+.select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  cursor: pointer;
+  text-align: left;
+}
+
+.select__value {
+  flex: 1;
+}
+
+.select__value.is-placeholder {
+  font-family: var(--form-field-font);
+  font-size: var(--form-field-size);
+  font-weight: var(--form-field-weight);
+  color: var(--form-field-color);
+}
+
+.select__arrow {
+  flex-shrink: 0;
+  color: var(--color-brown);
+  transition: transform var(--transition);
+}
+
+.select.is-open .select__arrow {
+  transform: rotate(180deg);
+}
+
+.select__menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0;
+  background-color: var(--color-cream);
+  box-shadow: 0 4px 16px rgba(113, 91, 67, 0.15);
+}
+
+.select__menu[hidden] {
+  display: none;
+}
+
+.select__option {
+  padding: 0.55rem 0.85rem;
+  font-family: var(--form-field-font);
+  font-size: var(--form-field-size);
+  color: var(--form-field-color);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.select__option:hover,
+.select__option.is-selected {
+  background-color: var(--color-olive);
+  color: var(--color-cream-bg);
+}
+
+.field-checkbox {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.field-checkbox__input {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.35rem;
+  border: 1px solid var(--color-olive);
+  border-radius: 2px;
+  background-color: var(--color-cream-bg);
+  accent-color: var(--color-olive);
+  cursor: pointer;
+}
+
+.field-checkbox a {
+  color: inherit;
 }

@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import SectionDivider from '../components/SectionDivider.astro';
-import HeroText from '../components/HeroText.astro';
 import SectionCenter from '../components/SectionCenter.astro';
 import Section from '../components/Section.astro';
 import FullImage from '../components/FullImage.astro';
@@ -44,127 +43,75 @@ const buildSteps = [
   <PageHeader title="Il format" />
   <FullImage src="/images/il-format/format-1.webp" alt="Persone che si allungano all'aperto durante un'esperienza MonFarm" />
   <SectionCenter>
-    <h3>Un modo di progettare esperienze che mette al centro la
-    relazione tra luogo, persone e pratiche.</h3>
+    <p class="text-intro">Un modo di progettare esperienze che mette al centro la
+    relazione tra luogo, persone e pratiche.</p>
   </SectionCenter>
   <SectionDivider />
 
   <Section>
-    <h4>Rallentare per tornare all'essenziale</h4>
+    <h4 class="text-subsection">Rallentare per tornare all'essenziale</h4>
     <p>
-              MonFarm nasce dal desiserio di creare spazi in cui il tempo possa dilatarsi e la presenza tornare al centro
-
+      MonFarm nasce dal desiserio di creare spazi in cui il tempo possa dilatarsi e la presenza tornare al centro
     </p>
-     <p>
-        Crediamo nella natura come contesto generativo nella lentezza come valore e nell'incontro come esperienza trasformativa. Ogni proposta nasce da una visione chiara: favorire connessioni autentiche, lontane dalla logica della performance o del consumo. Non si trata di organizzare evneti ma di curare processi.
-
+    <p>
+      Crediamo nella natura come contesto generativo nella lentezza come valore e nell'incontro come esperienza trasformativa. Ogni proposta nasce da una visione chiara: favorire connessioni autentiche, lontane dalla logica della performance o del consumo. Non si trata di organizzare evneti ma di curare processi.
     </p>
   </Section>
-
-
 
   <FullImage src="/images/il-format/format-2.webp" alt="Abbraccio tra persone in un contesto naturale" />
 
   <SectionDivider />
 
-  <!-- ===== COME SI COSTRUISCE ===== -->
   <Section>
-      
-      <h2>Come si costruisce<em> un'esperienza</em></h2>
-     
+    <p class="text-display">Come si costruisce<em> un'esperienza</em></p>
 
-      <ul class="build-list" role="list">
-        {buildSteps.map((step) => (
-          <li class="build-item">
-            <div class="build-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
-            </div>
-            <div>
-              <h4>{step.title}</h4>
-              <p>{step.text}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul class="build-list" role="list">
+      {buildSteps.map((step) => (
+        <li class="build-item">
+          <div class="build-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
+          </div>
+          <div>
+            <h4 class="text-subsection">{step.title}</h4>
+            <p class="text-small text-muted">{step.text}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
   </Section>
 
   <SectionDivider />
 
-
-
   <Section>
-          <h1 style="text-align: center; position: relative;
-  top: 29px; font-size:50px">Mi presento</h1>
+    <h2 class="text-title mi-presento__title">Mi presento</h2>
 
-      <div class="mi-presento__card">
-        <FullImage src="/images/il-format/format-3.webp" alt="Beatrice Furia, fondatrice e curatrice di MonFarm Experience" />
-        <div class="mi-presento__info" style="margin-bottom: 100px;">
-          <h2>Beatrice Furia</h2>
-          <h4>Fondatrice e curatrice di MonFarm Experience.</h4>
-        </div>
+    <div class="mi-presento__card">
+      <FullImage src="/images/il-format/format-3.webp" alt="Beatrice Furia, fondatrice e curatrice di MonFarm Experience" />
+      <div class="mi-presento__info">
+        <p class="text-display">Beatrice Furia</p>
+        <h4 class="text-subsection">Fondatrice e curatrice di MonFarm Experience.</h4>
       </div>
     </div>
-    <h4>Il mio <em>ruolo</em></h4>
+
+    <h4 class="text-subsection">Il mio <em>ruolo</em></h4>
     <p>
-          Il mio compito è tenere insieme tutti gli elementi dell'esperienza.
-          Curo il concept, accompagno la progettazione con le strutture,
-          seleziono gli operatori e custodisco la coerenza dell'intero percorso.
-        </p>
-        <p>
-          Mi occupo della visione complessiva, affinché ogni esperienza sia
-          armonica, autentica e rispettosa dei <strong>ritmi naturali</strong>.
-        </p>
+      Il mio compito è tenere insieme tutti gli elementi dell'esperienza.
+      Curo il concept, accompagno la progettazione con le strutture,
+      seleziono gli operatori e custodisco la coerenza dell'intero percorso.
+    </p>
+    <p>
+      Mi occupo della visione complessiva, affinché ogni esperienza sia
+      armonica, autentica e rispettosa dei <strong>ritmi naturali</strong>.
+    </p>
   </Section>
 
   <SectionDivider />
-  <!-- ===== CLOSING QUOTE ===== -->
- <SectionCenter>
-    <h3>
-        <em>MonFarm Experience è un invito a progettare insieme spazi di qualità,
-        in cui la relazione diventa il cuore dell'esperienza.</em>
-        </h3>
+
+  <SectionCenter>
+    <p class="text-intro">
+      <em>MonFarm Experience è un invito a progettare insieme spazi di qualità,
+      in cui la relazione diventa il cuore dell'esperienza.</em>
+    </p>
   </SectionCenter>
 
 </Layout>
-
-<style>
-.build-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-
-.build-item {
-  display: flex;
-  gap: var(--space-md);
-  align-items: flex-start;
-}
-
-.build-item__icon {
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  color: var(--color-text-light);
-}
-
-.build-item__icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.build-item p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--color-text-light);
-}
-
-.mi-presento__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  text-align: center;
-}
-</style>

@@ -3,11 +3,11 @@ import Button from './Button.astro';
 import Section from './Section.astro';
 import SectionDivider from './SectionDivider.astro';
 const navItems = [
-  { label: 'Home',              href: '/' },
-  { label: 'Il Format',         href: '/il-format' },
-  { label: 'A Chi È Rivolto',   href: '/a-chi-e-rivolto' },
-  { label: 'Esperienze',        href: '/esperienze' },
-  { label: 'Collabora',         href: '/collabora' },
+  { label: "Home", href: "/" },
+  { label: "Il Format", href: "/il-format" },
+  { label: "A Chi E' Rivolto", href: "/a-chi-e-rivolto" },
+  { label: "Esperienze", href: "/esperienze" },
+  { label: "Collabora", href: "/collabora" },
 ];
 ---
 
@@ -90,7 +90,7 @@ const navItems = [
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 4.5rem;
 }
 
 /* Burger — sinistra */
@@ -111,7 +111,7 @@ const navItems = [
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-brown);
+  background-color: var(--color-olive);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
@@ -123,7 +123,7 @@ const navItems = [
   transform: translateX(-50%);
 }
 .header__logo img {
-  height: 48px;
+  height: 3.2rem;
   width: auto;
 }
 
@@ -186,10 +186,10 @@ const navItems = [
 
 .mobile-menu__link {
   display: block;
-  font-size: 1.5rem;
-  color: var(--color-brown);
+  font-size: 1.35rem;
+  color: var(--color-text);
   text-decoration: none;
-  padding-block: var(--space-sm);
+  padding-block: 0.85rem;
   transition: color var(--transition);
 }
 .mobile-menu__link:hover { color: var(--color-olive); }

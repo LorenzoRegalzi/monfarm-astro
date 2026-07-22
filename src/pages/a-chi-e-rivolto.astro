@@ -12,15 +12,14 @@ import SectionCenter from '../components/SectionCenter.astro';
   title="A Chi È Rivolto"
   description="MonFarm Experience nasce per creare connessioni tra luoghi, professionisti e persone che condividono una stessa visione."
 >
-
   <PageHeader title="A chi è rivolto" />
 
- 
+  <FullImage
+    src="/images/a-chi-e-rivolto/a-chi-1.webp"
+    alt="Scalinata immersa nella vegetazione rigogliosa"
+    height="var(--image-tall-height)"
+  />
 
-  <!-- ===== PHOTO banner ===== -->
-  <FullImage src="/images/a-chi-e-rivolto/a-chi-1.webp" alt="Scalinata immersa nella vegetazione rigogliosa" height="50vh" />
-
-   <!-- ===== INTRO ===== -->
   <SectionCenter>
     <p class="text-intro">
       MonFarm Experience nasce per creare connessioni tra luoghi,
@@ -30,13 +29,15 @@ import SectionCenter from '../components/SectionCenter.astro';
 
   <SectionDivider bar={false} />
 
-  <FullImage src="/images/a-chi-e-rivolto/a-chi-2.webp" alt="Scalinata immersa nella vegetazione rigogliosa" height="20vh" />
-
-
+  <FullImage
+    src="/images/a-chi-e-rivolto/a-chi-2.webp"
+    alt="Dettaglio di un momento condiviso all'aperto"
+    height="var(--image-short-height)"
+  />
 
   <Section>
-    <h4 class="text-subsection">Strutture immerse nella natura</h4>
-    <p>
+    <h4 class="text-subsection text-subsection--serif accent-title">Per strutture immerse nella natura</h4>
+    <p class="text-body--thin">
       Se gestisci un agriturismo, una tenuta, un relais o uno spazio immerso
       nella natura e senti il desiderio di ospitare esperienze curate, lente e
       coerenti con i tuoi valori, MonFarm Experience può diventare un partner
@@ -45,49 +46,51 @@ import SectionCenter from '../components/SectionCenter.astro';
     <Button href="/collabora" text="Proponi la tua struttura" />
   </Section>
 
-   <SectionDivider bar={false} />
+  <SectionDivider bar={false} />
 
-  <FullImage src="/images/a-chi-e-rivolto/a-chi-3.webp" alt="Falò acceso in un contesto naturale" height="20vh" />
-
+  <FullImage
+    src="/images/a-chi-e-rivolto/a-chi-3.webp"
+    alt="Falò acceso in un contesto naturale"
+    height="var(--image-mid-height)"
+  />
 
   <Section>
-    <h4 class="text-subsection">Operatori e facilitatori</h4>
-    <p >
+    <h4 class="text-subsection text-subsection--serif accent-title">Per operatori e facilitatori</h4>
+    <p class="text-body--thin">
       Se accompagni le persone attraverso pratiche come yoga, movimento dolce,
       journaling, dialogo guidato o arti espressive, e credi nel valore della
       co-creazione, potremmo costruire qualcosa insieme.
     </p>
-    <p>
+    <p class="text-body--thin">
       Cerco professionisti che lavorino in presenza, con gruppi piccoli e con
       un approccio umano e non performativo.
     </p>
-    <p>
+    <p class="text-body--thin">
       Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
     </p>
     <Button href="/collabora" text="Collabora come operatore" />
   </Section>
 
- <SectionDivider bar={false} />
+  <SectionDivider bar={false} />
 
-  <FullImage src="/images/a-chi-e-rivolto/a-chi-4.webp" alt="Persona in riposo immersa nella natura" height="20vh" />
+  <FullImage
+    src="/images/a-chi-e-rivolto/a-chi-4.webp"
+    alt="Persona in riposo immersa nella natura"
+    height="var(--image-mid-height)"
+  />
 
-  <!-- ===== PERSONE E GRUPPI ===== -->
   <Section>
-    <h4 class="text-subsection">Persone e gruppi</h4>
-    <p >
-      Chi sente il bisogno di fermarsi, respirare e riconnettersi in un
-      contesto autentico.
-    </p>
-    <p >
+    <h4 class="text-subsection text-subsection--serif accent-title">Per chi sente il bisogno di riconnettersi</h4>
+    <p class="text-body--thin">
       MonFarm Experience è pensato per chi desidera fermarsi, respirare e
       vivere un'esperienza immersiva nella natura, lontano dai ritmi accelerati.
+    </p>
+    <p class="text-body--thin">
       Le esperienze vengono comunicate di volta in volta attraverso i canali dedicati.
     </p>
-    <p>
+    <p class="text-body--thin">
       Questo sito non propone prenotazioni o vendite dirette, ma racconta il
       progetto e le sue collaborazioni.
     </p>
   </Section>
-
 </Layout>
-

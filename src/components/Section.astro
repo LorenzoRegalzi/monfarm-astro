@@ -1,13 +1,20 @@
 ---
 interface Props {
   bg?: 'olive';
+  compact?: boolean;
 }
 
-const { bg } = Astro.props;
+const { bg, compact = false } = Astro.props;
 ---
 
-<section class:list={['section', { 'section--olive': bg === 'olive' }]}>
-  <div class="container stack stack--md section__inner">
+<section class:list={[
+  'section',
+  {
+    'section--olive': bg === 'olive',
+    'section--tight': compact,
+  },
+]}>
+  <div class="container stack section__inner">
     <slot />
   </div>
 </section>

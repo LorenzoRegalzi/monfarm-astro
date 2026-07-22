@@ -4,15 +4,33 @@ interface Props {
   alt: string;
   height?: string;
   round?: boolean;
+  portrait?: boolean;
+  solid?: boolean;
   loading?: 'lazy' | 'eager';
 }
 
-const { src, alt, height = '50vh', round = false, loading = 'lazy' } = Astro.props;
+const {
+  src,
+  alt,
+  height,
+  round = false,
+  portrait = false,
+  solid = false,
+  loading = 'lazy',
+} = Astro.props;
+const resolvedHeight = portrait || round ? undefined : (height ?? 'var(--image-wide-height)');
 ---
 
 <div
-  class:list={['full-image', { 'full-image--round': round }]}
-  style={!round ? `height: ${height};` : undefined}
+  class:list={[
+    'full-image',
+    {
+      'full-image--round': round,
+      'full-image--portrait': portrait,
+      'full-image--solid': solid,
+    },
+  ]}
+  style={!round && !portrait && resolvedHeight ? `height: ${resolvedHeight};` : undefined}
 >
   <img
     src={src}

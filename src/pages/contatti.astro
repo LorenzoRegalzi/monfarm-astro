@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PageHeader from "../components/PageHeader.astro";
-import ContactForm from "../components/ContactForm.astro";
-import SectionCenter from "../components/SectionCenter.astro";
-import SectionDivider from "../components/SectionDivider.astro";
-import FullImage from "../components/FullImage.astro";
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+import SectionCenter from '../components/SectionCenter.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import FullImage from '../components/FullImage.astro';
 ---
 
 <Layout
@@ -18,15 +18,13 @@ import FullImage from "../components/FullImage.astro";
       Se senti che MonFarm Experience potrebbe essere in sintonia con il tuo
       spazio, il tuo lavoro o il tuo percorso, scrivimi.
     </p>
-    <div class="stack stack--flush stack--tight">
-      <p class="text-lead--italic">
-        Ogni collaborazione nasce da una conversazione.
-      </p>
-      <p class="text-lead">
-        Raccontami chi sei, cosa fai e cosa ti piacerebbe costruire insieme.
-      </p>
-    </div>
-    <p class="text-lead text-lead--olive">
+    <p class="text-lead--italic">
+      Ogni collaborazione nasce da una conversazione.
+    </p>
+    <p class="text-lead">
+      Raccontami chi sei, cosa fai e cosa ti piacerebbe costruire insieme.
+    </p>
+    <p class="text-lead--olive">
       Ti risponderò <strong>personalmente</strong>.
     </p>
   </SectionCenter>
@@ -34,6 +32,7 @@ import FullImage from "../components/FullImage.astro";
   <FullImage
     src="/images/contatti/contatti-1.webp"
     alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm"
+    height="var(--image-tall-height)"
   />
 
   <section class="section">
@@ -45,16 +44,16 @@ import FullImage from "../components/FullImage.astro";
   <SectionDivider />
 
   <SectionCenter>
-    <p class="text-display">
-      MonFarm Experience è<br />
-      un <em>progetto relazionale</em>:<br />
+    <p class="text-display text-display--md">
+      MonFarm Experience è un <em>progetto relazionale</em>:
       ogni incontro è il punto di partenza.
     </p>
   </SectionCenter>
 
   <FullImage
     src="/images/contatti/contatti-2.webp"
-    alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm"
+    alt="Ritratto di Beatrice Furia, fondatrice di MonFarm Experience"
+    height="var(--image-mid-height)"
   />
 
   <SectionCenter>
@@ -64,9 +63,3 @@ import FullImage from "../components/FullImage.astro";
     </p>
   </SectionCenter>
 </Layout>
-
-<style>
-  .text-display {
-    line-height: 1.15;
-  }
-</style>

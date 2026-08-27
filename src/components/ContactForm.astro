@@ -1,126 +1,126 @@
 ---
-// Contact form component
-// Submissions handled via Netlify Forms or a custom endpoint
 import Button from './Button.astro';
+
+const motivoOptions = [
+  { value: 'struttura-location', label: 'Struttura/location' },
+  { value: 'operatore-insegnante', label: 'Operatore/insegnante' },
+  { value: 'partecipare', label: 'Vorrei partecipare' },
+  { value: 'altro', label: 'Altro' },
+];
+
+const selectPlaceholder = 'Cosa ti porta qui?';
 ---
 
 <form
-  class="contact-form"
+  class="contact-form stack stack--sm"
   method="POST"
   action="/api/contact"
   novalidate
   id="contact-form"
 >
-  <!-- Honeypot anti-spam -->
   <p hidden>
     <label>Non compilare: <input name="bot-field" /></label>
   </p>
 
-  <div class="contact-form__row">
-    <div class="contact-form__field">
-      <label class="contact-form__label" for="nome">Nome</label>
-      <input
-        class="contact-form__input"
-        type="text"
-        id="nome"
-        name="nome"
-        placeholder="Nome"
-        autocomplete="given-name"
-        required
-        aria-required="true"
-      />
-    </div>
+  <input
+    class="input-line"
+    type="text"
+    id="nome"
+    name="nome"
+    placeholder="Nome"
+    autocomplete="given-name"
+    required
+    aria-required="true"
+    aria-label="Nome"
+  />
 
-    <div class="contact-form__field">
-      <label class="contact-form__label" for="cognome">Cognome</label>
-      <input
-        class="contact-form__input"
-        type="text"
-        id="cognome"
-        name="cognome"
-        placeholder="Cognome"
-        autocomplete="family-name"
-        required
-        aria-required="true"
-      />
-    </div>
-  </div>
+  <input
+    class="input-line"
+    type="text"
+    id="cognome"
+    name="cognome"
+    placeholder="Cognome"
+    autocomplete="family-name"
+    required
+    aria-required="true"
+    aria-label="Cognome"
+  />
 
-  <div class="contact-form__field">
-    <label class="contact-form__label" for="email">Mail</label>
-    <input
-      class="contact-form__input"
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Mail"
-      autocomplete="email"
-      required
-      aria-required="true"
-    />
-  </div>
+  <input
+    class="input-line"
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Mail"
+    autocomplete="email"
+    required
+    aria-required="true"
+    aria-label="Mail"
+  />
 
-  <div class="contact-form__field">
-    <label class="contact-form__label" for="motivo">Cosa ti porta qui?</label>
-    <div class="contact-form__select-wrap">
-      <select
-        class="contact-form__select"
-        id="motivo"
-        name="motivo"
-        required
-        aria-required="true"
-      >
-        <option value="" disabled selected>Cosa ti porta qui?</option>
-        <option value="struttura-location">Struttura/location</option>
-        <option value="operatore-insegnante">Operatore/insegnante</option>
-        <option value="partecipare">Vorrei partecipare</option>
-        <option value="altro">Altro</option>
-      </select>
-      <span class="contact-form__select-arrow" aria-hidden="true">
+  <div class="select" data-select data-select-placeholder={selectPlaceholder}>
+    <button
+      type="button"
+      class="select__trigger input-line"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-label={selectPlaceholder}
+      id="motivo"
+    >
+      <span class="select__value is-placeholder" data-select-value>{selectPlaceholder}</span>
+      <span class="select__arrow" aria-hidden="true">
         <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
           <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </span>
-    </div>
+    </button>
+    <ul class="select__menu" role="listbox" aria-label={selectPlaceholder} hidden>
+      {motivoOptions.map((option) => (
+        <li
+          class="select__option"
+          role="option"
+          data-value={option.value}
+          tabindex="-1"
+        >
+          {option.label}
+        </li>
+      ))}
+    </ul>
+    <input type="hidden" name="motivo" value="" required aria-required="true" data-select-input />
   </div>
 
-  <div class="contact-form__field">
-    <label class="contact-form__label" for="messaggio">Messaggio</label>
+  <div class="field">
+    <label class="text-form-label" for="messaggio">Messaggio</label>
     <textarea
-      class="contact-form__textarea"
+      class="input-box"
       id="messaggio"
       name="messaggio"
-      placeholder="Messaggio"
       rows="7"
       required
       aria-required="true"
     ></textarea>
   </div>
 
-  <div class="contact-form__privacy">
-    <label class="contact-form__checkbox-label">
-      <input
-        class="contact-form__checkbox"
-        type="checkbox"
-        name="privacy"
-        required
-        aria-required="true"
-        aria-describedby="privacy-desc"
-      />
-      <span id="privacy-desc">
-        Accetto la
-        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
-          privacy policy
-        </a>
-      </span>
-    </label>
-  </div>
+  <label class="field-checkbox" for="privacy">
+    <input
+      class="field-checkbox__input"
+      type="checkbox"
+      id="privacy"
+      name="privacy"
+      required
+      aria-required="true"
+      aria-describedby="privacy-desc"
+    />
+    <span class="text-form-label" id="privacy-desc">
+      Accetto la
+      <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a>
+    </span>
+  </label>
 
-  <div class="contact-form__submit">
+  <div class="stack stack--center">
     <Button text="Invia messaggio" type="submit" />
   </div>
 
-  <!-- Success / error messages (shown via JS) -->
   <p class="contact-form__success" role="alert" hidden>
     Grazie! Ti risponderemo al più presto.
   </p>
@@ -131,148 +131,16 @@ import Button from './Button.astro';
 
 <style>
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
   max-width: 520px;
   margin-inline: auto;
 }
 
-.contact-form__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-}
-
-@media (max-width: 480px) {
-  .contact-form__row {
-    grid-template-columns: 1fr;
-  }
-}
-
-.contact-form__field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.contact-form__label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-}
-
-/* Shared input styles */
-.contact-form__input,
-.contact-form__select,
-.contact-form__textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--color-brown);
-  border-radius: 0;
-  padding: 0.55rem 0;
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  color: var(--color-brown);
-  outline: none;
-  transition: border-color var(--transition);
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.contact-form__input::placeholder,
-.contact-form__textarea::placeholder {
-  color: var(--color-text-light);
-}
-
-.contact-form__input:focus,
-.contact-form__select:focus,
-.contact-form__textarea:focus {
-  border-bottom-color: var(--color-olive);
-}
-
-/* Textarea */
-.contact-form__textarea {
-  resize: vertical;
-  min-height: 140px;
-  border: 1px solid var(--color-brown);
-  border-radius: var(--border-radius);
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-}
-
-/* Select wrapper */
-.contact-form__select-wrap {
-  position: relative;
-}
-
-.contact-form__select {
-  cursor: pointer;
-  padding-right: 2rem;
-}
-.contact-form__select option[value=""][disabled] {
-  color: var(--color-text-light);
-}
-
-.contact-form__select-arrow {
-  position: absolute;
-  right: 0.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: var(--color-brown);
-}
-
-/* Privacy checkbox */
-.contact-form__privacy {
-  margin-top: var(--space-xs);
-}
-
-.contact-form__checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.9rem;
-  color: var(--color-text);
-  cursor: pointer;
-  line-height: 1.5;
-}
-
-.contact-form__checkbox {
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
-  border: 1px solid var(--color-brown);
-  border-radius: 2px;
-  cursor: pointer;
-  accent-color: var(--color-olive);
-}
-
-.contact-form__checkbox-label a {
-  color: var(--color-olive);
-  text-decoration: underline;
-}
-
-/* Submit */
-.contact-form__submit {
-  display: flex;
-  justify-content: center;
-}
-
-.contact-form__btn {
-  min-width: 200px;
-}
-
-/* Feedback messages */
 .contact-form__success {
   text-align: center;
   color: var(--color-olive);
   font-weight: 600;
 }
+
 .contact-form__error {
   text-align: center;
   color: var(--color-terracotta);
@@ -280,13 +148,98 @@ import Button from './Button.astro';
 </style>
 
 <script>
+  function initSelect(root: HTMLElement) {
+    const trigger = root.querySelector('.select__trigger') as HTMLButtonElement;
+    const menu = root.querySelector('.select__menu') as HTMLUListElement;
+    const valueEl = root.querySelector('[data-select-value]') as HTMLSpanElement;
+    const hiddenInput = root.querySelector('[data-select-input]') as HTMLInputElement;
+    const options = Array.from(root.querySelectorAll('.select__option')) as HTMLLIElement[];
+    const placeholder = root.dataset.selectPlaceholder ?? '';
+
+    function closeMenu() {
+      root.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    }
+
+    function openMenu() {
+      root.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      menu.hidden = false;
+    }
+
+    function resetValue() {
+      hiddenInput.value = '';
+      valueEl.textContent = placeholder;
+      valueEl.classList.add('is-placeholder');
+      options.forEach((item) => {
+        item.classList.remove('is-selected');
+        item.setAttribute('aria-selected', 'false');
+      });
+    }
+
+    function selectOption(option: HTMLLIElement) {
+      const value = option.dataset.value ?? '';
+      const label = option.textContent?.trim() ?? '';
+
+      hiddenInput.value = value;
+      valueEl.textContent = label;
+      valueEl.classList.remove('is-placeholder');
+
+      options.forEach((item) => {
+        item.classList.toggle('is-selected', item === option);
+        item.setAttribute('aria-selected', item === option ? 'true' : 'false');
+      });
+
+      closeMenu();
+      trigger.focus();
+    }
+
+    trigger.addEventListener('click', () => {
+      menu.hidden ? openMenu() : closeMenu();
+    });
+
+    options.forEach((option, index) => {
+      option.setAttribute('aria-selected', 'false');
+      option.addEventListener('click', () => selectOption(option));
+      option.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectOption(option);
+        }
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          (options[index + 1] ?? options[0])?.focus();
+        }
+        if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          (options[index - 1] ?? options[options.length - 1])?.focus();
+        }
+        if (event.key === 'Escape') {
+          closeMenu();
+          trigger.focus();
+        }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!root.contains(event.target as Node)) closeMenu();
+    });
+
+    root.addEventListener('select:reset', resetValue);
+  }
+
+  document.querySelectorAll('[data-select]').forEach((select) => {
+    initSelect(select as HTMLElement);
+  });
+
   const form = document.getElementById('contact-form') as HTMLFormElement;
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const successMsg = form.querySelector('.contact-form__success') as HTMLElement;
-      const errorMsg   = form.querySelector('.contact-form__error') as HTMLElement;
-      const btn        = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const errorMsg = form.querySelector('.contact-form__error') as HTMLElement;
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 
       btn.disabled = true;
       btn.textContent = 'Invio in corso…';
@@ -300,6 +253,9 @@ import Button from './Button.astro';
 
         if (res.ok && json.ok) {
           form.reset();
+          form.querySelectorAll('[data-select]').forEach((select) => {
+            select.dispatchEvent(new CustomEvent('select:reset'));
+          });
           successMsg.hidden = false;
           errorMsg.hidden = true;
         } else {

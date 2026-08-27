@@ -1,131 +1,297 @@
-/* =============================================
-   MONFARM EXPERIENCE — Typography System
-   Font 1 (Serif):     Baskerville URW
-   Font 2 (Sans-serif): Proxima Nova
+.text-center { text-align: center; }
 
-   Caricamento font richiesto:
-   - Self-host in /public/fonts/ con @font-face, oppure
-   - Incolla il codice embed di Adobe Fonts nel <head> di Layout.astro
-   ============================================= */
-
-/* ------------------------------------------------------------------
-   1. MENU DI NAVIGAZIONE
-   Proxima Nova · Regular/Medium · ALL CAPS · letter-spacing
-   ------------------------------------------------------------------ */
 .text-nav {
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
+  font-weight: 300;
+  font-size: var(--fs-nav);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: var(--lh-snug);
 }
 
-/* ------------------------------------------------------------------
-   2. TITOLI DI SEZIONE PRINCIPALI — H1
-   Baskerville URW · Regular · Iniziale maiuscola
-   Es. "Il format", "A chi è rivolto", "Collabora"
-   ------------------------------------------------------------------ */
-.text-h1 {
+.text-title {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
-  font-size: clamp(2rem, 6vw, 3.2rem);
-  line-height: 1.15;
-  color: var(--color-brown);
-}
-
-/* ------------------------------------------------------------------
-   3. SOTTOTITOLI / FRASI D'IMPATTO — H2
-   Baskerville URW · Regular · Iniziale maiuscola
-   ------------------------------------------------------------------ */
-.text-h2 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-style: normal;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  line-height: 1.25;
-  color: var(--color-brown);
-}
-
-/* Variante corsivo — per frasi poetiche/evocative */
-.text-h2--italic {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  line-height: 1.3;
-  color: var(--color-brown);
-}
-
-/* ------------------------------------------------------------------
-   4. TITOLI TERZIANTI — H3
-   Baskerville URW · Regular
-   ------------------------------------------------------------------ */
-.text-h3, h3 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-style: normal;
-  font-size: clamp(1.15rem, 3vw, 1.5rem);
-  line-height: 1.3;
-  color: var(--color-brown);
-}
-
-h3 em {
-  font-style: italic;
-}
-
-/* ------------------------------------------------------------------
-   5. CORPO DEL TESTO
-   Proxima Nova · Regular · Normale
-   ------------------------------------------------------------------ */
-.text-body, p {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: var(--fs-title);
+  line-height: var(--lh-tight);
   color: var(--color-text);
 }
 
-/* ------------------------------------------------------------------
-   6. CORSIVO NEL CORPO
-   Proxima Nova · Italic
-   Es. "Non esistono format preconfezionati"
-       "Ogni collaborazione nasce da una conversazione"
-   ------------------------------------------------------------------ */
-.text-body--italic, p em {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-style: italic;
-  font-size: 1rem;
-  line-height: 1.8;
+.text-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--fs-display);
+  line-height: var(--lh-snug);
   color: var(--color-text);
 }
 
-/* ------------------------------------------------------------------
-   7. BOTTONI / CALL TO ACTION
-   Baskerville URW · Regular · Iniziale maiuscola
-   Es. "Scopri di più", "Vai ai contatti"
-   ------------------------------------------------------------------ */
-.text-btn {
+.text-display--md {
+  font-size: var(--fs-display-md);
+  font-weight: 700;
+}
+
+.text-display--italic {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--fs-display-md);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+.text-display--lg {
+  font-weight: 700;
+  font-size: var(--fs-display);
+  line-height: var(--lh-snug);
+}
+
+.text-display em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  color: inherit;
+  font-style: italic;
+}
+
+.text-display strong {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  font-style: normal;
+  color: inherit;
+}
+
+.text-intro {
   font-family: var(--font-serif);
   font-weight: 400;
   font-style: normal;
-  font-size: 1rem;
+  font-size: var(--fs-intro);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+.text-intro em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  color: inherit;
+  font-style: italic;
+}
+
+.text-intro a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.text-intro--olive {
+  color: rgba(130, 130, 89, 0.82);
+}
+
+.text-intro--olive a {
+  color: rgba(130, 130, 89, 0.9);
+  font-weight: 700;
+}
+
+.text-quote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--fs-quote);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+.text-quote em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text-quote strong {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.text-quote--olive {
+  color: rgba(130, 130, 89, 0.82);
+}
+
+.text-quote--olive strong {
+  font-weight: 700;
+  color: rgba(130, 130, 89, 0.9);
+}
+
+.text-lead {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-style: normal;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+.text-lead--italic {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+.text-lead--olive {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
+  color: rgba(130, 130, 89, 0.82);
+}
+
+.text-lead--olive strong {
+  font-weight: 700;
+  color: rgba(130, 130, 89, 0.9);
+}
+
+.text-subsection {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-style: normal;
+  font-size: var(--fs-heading);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+.text-subsection--serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: var(--fs-heading-lg);
+}
+
+.text-subsection em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-style: italic;
+}
+
+.text-value {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-heading);
+  line-height: var(--lh-snug);
+  color: var(--color-text-cream);
+}
+
+.text-body,
+p {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+.text-body--thin,
+p.text-body--thin {
+  font-weight: 200;
+}
+
+.text-small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  font-weight: 200;
+}
+
+.text-muted {
+  color: var(--color-text-light);
+}
+
+p strong,
+.text-body strong {
+  font-family: inherit;
+  font-weight: 500;
+  font-style: normal;
+  color: inherit;
+}
+
+p em,
+.text-body em {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: italic;
+  color: inherit;
+}
+
+.text-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  line-height: 1.45;
+}
+
+.text-cta {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--fs-cta);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.text-date {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--fs-heading-lg);
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-text);
+  line-height: var(--lh-tight);
 }
 
-/* ------------------------------------------------------------------
-   8. FORM — label, input, select
-   Proxima Nova · Regular · Iniziale maiuscola
-   ------------------------------------------------------------------ */
+.text-event-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: var(--fs-heading-lg);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+.text-place {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: var(--fs-place);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
 .text-form {
   font-family: var(--font-sans);
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 300;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: var(--lh-body);
   color: var(--color-text);
+}
+
+.text-form-label {
+  font-family: var(--form-field-font);
+  font-weight: var(--form-field-weight);
+  font-size: var(--form-field-size);
+  line-height: var(--form-field-line-height);
+  color: var(--form-field-color);
+}
+
+.text-form-label--sm {
+  font-size: 1.1rem;
 }

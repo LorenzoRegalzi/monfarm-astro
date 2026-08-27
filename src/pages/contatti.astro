@@ -11,29 +11,31 @@ import FullImage from '../components/FullImage.astro';
   title="Contatti"
   description="Contatta MonFarm Experience: sei una struttura, un operatore o vuoi partecipare? Scrivici, ti risponderò personalmente."
 >
-
   <PageHeader title="Contatti" />
 
-  <SectionCenter>
-    <h3>
+  <SectionCenter align="left">
+    <p class="text-lead">
       Se senti che MonFarm Experience potrebbe essere in sintonia con il tuo
       spazio, il tuo lavoro o il tuo percorso, scrivimi.
-    <h3/>
-        <h3>
-       <em>Ogni collaborazione nasce da una conversazione.
-        Raccontami chi sei, cosa fai e cosa ti piacerebbe costruire insieme.</em>
-        <br />
-        </h3>
-          <h3>
-      Ti risponderò personalmente.
-    </h3>
+    </p>
+    <p class="text-lead--italic">
+      Ogni collaborazione nasce da una conversazione.
+    </p>
+    <p class="text-lead">
+      Raccontami chi sei, cosa fai e cosa ti piacerebbe costruire insieme.
+    </p>
+    <p class="text-lead--olive">
+      Ti risponderò <strong>personalmente</strong>.
+    </p>
   </SectionCenter>
 
-  <!-- ===== BEATRICE PHOTO ===== -->
-  <FullImage src="/images/contatti/contatti-1.webp" alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm" />
+  <FullImage
+    src="/images/contatti/contatti-1.webp"
+    alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm"
+    height="var(--image-tall-height)"
+  />
 
-  <!-- ===== FORM ===== -->
-  <section class="section contatti-form-section">
+  <section class="section">
     <div class="container">
       <ContactForm />
     </div>
@@ -41,32 +43,23 @@ import FullImage from '../components/FullImage.astro';
 
   <SectionDivider />
 
-  <!-- ===== RELAZIONALE QUOTE ===== -->
   <SectionCenter>
-      <h2>
-        MonFarm Experience è un <em>progetto relazionale</em>:
-        ogni incontro è il punto di partenza.
-      </h2>
-    </div>
+    <p class="text-display text-display--md">
+      MonFarm Experience è un <em>progetto relazionale</em>:
+      ogni incontro è il punto di partenza.
+    </p>
   </SectionCenter>
-  <FullImage src="/images/contatti/contatti-2.webp" alt="Beatrice Furia sorridente in un prato durante un'esperienza MonFarm" />
 
- 
+  <FullImage
+    src="/images/contatti/contatti-2.webp"
+    alt="Ritratto di Beatrice Furia, fondatrice di MonFarm Experience"
+    height="var(--image-mid-height)"
+  />
 
-
-   <SectionCenter>
-    <h3>
-     Preferisci scrivere direttamente?
-    <h3/>
-    <h3>
+  <SectionCenter>
+    <p class="text-intro text-intro--olive">
+      Preferisci scrivere direttamente?<br />
       <a href="mailto:info@monfarmexperience.it">info@monfarmexperience.it</a>
-    </h3>
+    </p>
   </SectionCenter>
-
 </Layout>
-
-<style>
-.contatti-form-section {
-  padding-top: var(--space-xl);
-}
-</style>

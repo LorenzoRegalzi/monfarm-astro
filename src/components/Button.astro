@@ -6,10 +6,16 @@ interface Props {
 }
 
 const { href, text, type = 'submit' } = Astro.props;
+const isExternal = href?.startsWith('http');
 ---
 
 {href ? (
-  <a href={href} class="btn btn--primary">{text}</a>
+  <a
+    href={href}
+    class="btn btn--primary text-cta"
+    target={isExternal ? '_blank' : undefined}
+    rel={isExternal ? 'noopener noreferrer' : undefined}
+  >{text}</a>
 ) : (
-  <button type={type} class="btn btn--primary">{text}</button>
+  <button type={type} class="btn btn--primary text-cta">{text}</button>
 )}

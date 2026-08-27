@@ -11,27 +11,39 @@ import Section from '../components/Section.astro';
   title="Home"
   description="MonFarm Experience — Un format di esperienze immersive nella natura, nato per creare connessioni autentiche tra luoghi, persone e pratiche consapevoli."
 >
-
   <SectionCenter>
-    <h3>Un format di esperienze immersive nella natura,
-        nato per creare <em>connessioni autentiche</em> tra luoghi,
-        persone e pratiche consapevoli.
-    </h3>
+    <p class="text-intro">
+      Un format di esperienze immersive nella natura,
+      nato per creare <em>connessioni autentiche</em> tra luoghi,
+      persone e pratiche consapevoli.
+    </p>
   </SectionCenter>
-  <!-- ===== HERO IMAGE full-width ===== -->
-  <FullImage src="/images/home/home-1.webp" alt="Gruppo di persone in cerchio durante un'esperienza MonFarm nella natura" loading="eager" />
 
-  <!-- ===== OLIVE BAND ===== -->
+  <FullImage
+    src="/images/home/home-1.webp"
+    alt="Gruppo di persone in cerchio durante un'esperienza MonFarm nella natura"
+    height="var(--image-wide-height)"
+    loading="eager"
+  />
+
   <SectionCenter bg="olive">
-    <h2>Seminiamo valori,<br />raccogliamo benessere.</h2>
+    <p class="text-display text-display--md">
+      Seminiamo valori,<br />raccogliamo benessere.
+    </p>
   </SectionCenter>
 
-  <!-- ===== CURA SECTION ===== -->
-  <Section>
-    <h2 style="text-align: center;">
+  <Section compact>
+    <p class="text-display text-display--md text-center">
       Un <em>progetto fatto con cura</em>,<br />non un evento.
-    </h2>
-    <FullImage src="/images/home/home-2.webp" alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm" round />
+    </p>
+    <FullImage
+      src="/images/home/home-2.webp"
+      alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm"
+      round
+    />
+  </Section>
+
+  <Section>
     <p>
       MonFarm Experience nasce dal desiderio di rallentare e tornare
       all'<strong>essenziale</strong>.
@@ -48,76 +60,96 @@ import Section from '../components/Section.astro';
     </p>
   </Section>
 
-  <!-- ===== APPROCCIO BAND ===== -->
-  <SectionCenter bg="olive-light" align='left'>
-    <h2>Un approccio lento,<br />umano<br />e curato.</h2>
+  <SectionCenter bg="olive-light" align="left">
+    <p class="text-display">Un approccio lento,<br />umano<br />e curato.</p>
   </SectionCenter>
 
-  <!-- ===== APPROCCIO IMAGE ===== -->
-  <FullImage src="/images/home/home-3.webp" alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta" />
+  <FullImage
+    src="/images/home/home-3.webp"
+    alt="Terrazza al tramonto con luci e sedie, atmosfera raccolta"
+    height="var(--image-tall-height)"
+  />
 
-  <!-- ===== VALORI ===== -->
-  <Section bg='olive'>
-    <h3>Cura</h3>
-    <p>Ogni dettaglio viene pensato con attenzione: dalla scelta del luogo alla composizione del gruppo, fino alla qualità della presenza condivisa.</p>
+  <Section bg="olive">
+    <p class="text-value">Cura</p>
+    <p>
+      Ogni dettaglio viene pensato con attenzione: dalla scelta del luogo
+      alla composizione del gruppo, fino alla qualità della presenza condivisa.
+    </p>
 
-    <h3>Co-creazione</h3>
-    <p>Le esperienze nascono dal dialogo tra struttura, operatori e partecipanti. Non sono format rigidi, ma processi vivi.</p>
+    <p class="text-value">Co-creazione</p>
+    <p>
+      Le esperienze nascono dal dialogo tra struttura, operatori e partecipanti.
+      Non sono format rigidi, ma processi vivi.
+    </p>
 
-    <h3>Piccoli gruppi</h3>
-    <p>Crediamo nel valore dell'intimità e della qualità relazionale. Lavoriamo con numeri contenuti per preservare autenticità e profondità.</p>
+    <p class="text-value">Piccoli gruppi</p>
+    <p>
+      Crediamo nel valore dell'intimità e della qualità relazionale.
+      Lavoriamo con numeri contenuti per preservare autenticità e profondità.
+    </p>
   </Section>
 
   <SectionCenter>
-    <h2>
-      A chi si rivolge MonFarm Experience
-    </h2>
+    <p class="text-display">A chi si rivolge MonFarm Experience</p>
   </SectionCenter>
 
   <SectionDivider />
 
- <Section>
-      <h4>Strutture immerse nella natura</h4>
-      <p>
-        Agriturismi, tenute, relais e luoghi che desiderano ospitare esperienze curate e coerenti con i propri valori.
-      </p>
+  <Section compact>
+    <h4 class="text-subsection accent-title">Strutture immerse nella natura</h4>
+    <p>
+      Agriturismi, tenute, relais e luoghi che desiderano ospitare esperienze
+      curate e coerenti con i propri valori.
+    </p>
   </Section>
 
-  <FullImage src="/images/home/home-4.webp" alt="Piscina circondata da alberi e sedie, atmosfera rilassante" />
+  <FullImage
+    src="/images/home/home-4.webp"
+    alt="Piscina circondata da alberi e sedie, atmosfera rilassante"
+    height="var(--image-mid-height)"
+  />
 
   <SectionDivider />
 
-  <Section>
-      <h4>Operatori e facilitatori</h4>
-      <p>
-        Professionisti che accompagnano le persone attraverso pratiche corporee, espressive o di consapevolezza.
-      </p>
+  <Section compact>
+    <h4 class="text-subsection accent-title">Operatori e facilitatori</h4>
+    <p>
+      Professionisti che accompagnano le persone attraverso pratiche corporee,
+      espressive o di consapevolezza.
+    </p>
   </Section>
 
-  <FullImage src="/images/home/home-5.webp" alt="Donna che cammina nella natura" />
+  <FullImage
+    src="/images/home/home-5.webp"
+    alt="Donna che cammina nella natura"
+    height="var(--image-mid-height)"
+  />
 
   <SectionDivider />
 
-    <Section>
+  <Section compact>
+    <h4 class="text-subsection accent-title">Persone e gruppi</h4>
+    <p>
+      Chi sente il bisogno di fermarsi, respirare e riconnettersi in un contesto autentico.
+    </p>
+  </Section>
 
-      <h4 >Persone e gruppi</h4>
-      <p>
-        Chi sente il bisogno di fermarsi, respirare e riconnettersi in un contesto autentico.
-      </p>
-</Section>
+  <FullImage
+    src="/images/home/home-6.webp"
+    alt="Persona in meditazione sull'erba"
+    height="var(--image-mid-height)"
+  />
 
-  <FullImage src="/images/home/home-6.webp" alt="Persona in meditazione sull'erba" />
-
-  <!-- ===== CTA SECTION ===== -->
   <SectionCenter bg="olive">
-    <div style="position: relative;bottom: 65px;">
-    <Button  href="/esperienze" text="Scopri di più" />
+    <div class="cta-pull">
+      <Button href="/esperienze" text="Scopri di più" />
     </div>
-
-    <h3>
-      <em>Se senti che potrebbe esserci una sintonia, iniziamo a parlarne. Ogni collaborazione nasce da un incontro. Raccontami il tuo spazio, il tuo lavoro o la tua visione.</em>
-    </h3>
+    <p class="text-display text-display--md">
+      Se senti che potrebbe esserci una <em>sintonia</em>, iniziamo a parlarne.
+      Ogni collaborazione nasce da un <strong>incontro</strong>.
+      Raccontami il tuo spazio, il tuo lavoro o la tua visione.
+    </p>
     <Button href="/collabora" text="Collabora" />
   </SectionCenter>
-
 </Layout>

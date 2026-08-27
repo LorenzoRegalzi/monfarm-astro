@@ -1,47 +1,20 @@
 ---
 interface Props {
   bg?: 'olive';
+  compact?: boolean;
 }
 
-const { bg } = Astro.props;
+const { bg, compact = false } = Astro.props;
 ---
 
-<section class:list={['audience-block', { 'audience-block--olive': bg === 'olive' }]}>
-  <div class="container audience-block__inner">
+<section class:list={[
+  'section',
+  {
+    'section--olive': bg === 'olive',
+    'section--tight': compact,
+  },
+]}>
+  <div class="container stack section__inner">
     <slot />
   </div>
 </section>
-
-<style>
-.audience-block {
-  padding-block: var(--space-xl);
-}
-
-.audience-block__inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.audience-block__inner :global(p) {
-  margin-bottom: 20px;
-}
-
-.audience-block__inner :global(ul),
-.audience-block__inner :global(ol) {
-  padding-left: 1.25rem;
-}
-
-.audience-block__inner :global(li) {
-  padding-left: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.audience-block--olive {
-  background-color: var(--color-olive);
-}
-
-.audience-block--olive :global(*) {
-  color: var(--color-cream);
-}
-</style>

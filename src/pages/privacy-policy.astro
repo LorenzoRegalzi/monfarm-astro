@@ -7,18 +7,18 @@ import Layout from '../layouts/Layout.astro';
   description="Informativa sulla privacy di MonFarm Experience — trattamento dei dati personali ai sensi del GDPR."
 >
 
-  <section class="section page-hero">
+  <section class="section section--no-bottom">
     <div class="container">
-      <h1 class="page-title">Privacy Policy</h1>
-      <p class="page-subtitle">
+      <h1 class="text-title">Privacy Policy</h1>
+      <p class="text-small text-muted prose-lead">
         Informativa sul trattamento dei dati personali ai sensi del Regolamento
         (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003 e s.m.i.
       </p>
     </div>
   </section>
 
-  <section class="section privacy-body">
-    <div class="container privacy-content">
+  <section class="section">
+    <div class="container prose">
 
       <h2>1. Titolare del trattamento</h2>
       <p>
@@ -85,7 +85,7 @@ import Layout from '../layouts/Layout.astro';
         profilazione o di marketing di terze parti senza il tuo consenso.
       </p>
 
-      <p class="privacy-update">
+      <p class="prose--update">
         <em>Ultimo aggiornamento: aprile 2026</em>
       </p>
 
@@ -93,59 +93,3 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 </Layout>
-
-<style>
-.page-hero {
-  padding-bottom: 0;
-}
-
-.page-title {
-  font-size: clamp(2rem, 6vw, 3rem);
-  margin-bottom: var(--space-sm);
-}
-
-.page-subtitle {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text-light);
-  max-width: 520px;
-}
-
-.privacy-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  max-width: 680px;
-}
-
-.privacy-content h2 {
-  font-size: 1.1rem;
-  border-bottom: 1px solid var(--color-cream);
-  padding-bottom: var(--space-xs);
-}
-
-.privacy-content p,
-.privacy-content li {
-  line-height: 1.8;
-  color: var(--color-text-light);
-  font-size: 0.95rem;
-}
-
-.privacy-content ul {
-  list-style: disc;
-  padding-left: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.privacy-content a {
-  color: var(--color-olive);
-}
-
-.privacy-update {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  opacity: 0.75;
-}
-</style>

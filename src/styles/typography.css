@@ -128,7 +128,7 @@
 
 .text-lead {
   font-family: var(--font-sans);
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
@@ -192,7 +192,7 @@
 .text-body,
 p {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
@@ -201,13 +201,13 @@ p {
 
 .text-body--thin,
 p.text-body--thin {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .text-small {
   font-size: var(--fs-small);
   line-height: var(--lh-body);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .text-muted {
@@ -270,7 +270,7 @@ p em,
 
 .text-place {
   font-family: var(--font-sans);
-  font-weight: 200;
+  font-weight: 300;
   font-size: var(--fs-place);
   line-height: var(--lh-snug);
   color: var(--color-text);

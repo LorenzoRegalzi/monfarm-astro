@@ -6,8 +6,8 @@
   --color-olive-light: #98926e;
   --color-terracotta: #c97642;
   --color-white: #ffffff;
-  --color-text: rgba(113, 91, 67, 0.78);
-  --color-text-light: rgba(113, 91, 67, 0.62);
+  --color-text: rgba(113, 91, 67, 0.85);
+  --color-text-light: rgba(113, 91, 67, 0.68);
   --color-text-cream: rgba(223, 211, 189, 0.88);
 
   --font-serif: "Libre Baskerville", serif;
@@ -71,7 +71,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   background-color: var(--color-cream-bg);
   color: var(--color-text);
   line-height: var(--lh-body);
@@ -169,7 +169,6 @@ a:hover {
 
 .section__inner > .text-value + p,
 .section__inner > .text-subsection + p,
-.section__inner > .accent-title + p,
 .section__inner > .text-date + p,
 .section__inner > .text-event-title + p,
 .section__inner > .text-place + p {
@@ -178,9 +177,7 @@ a:hover {
 
 .section__inner > p + .text-value,
 .section__inner > p + .text-subsection,
-.section__inner > p + .accent-title,
 .section__inner > ul + .text-subsection,
-.section__inner > ul + .accent-title,
 .section__inner > p + .btn,
 .section__inner > ul + .btn {
   margin-top: var(--space-md);
@@ -200,7 +197,7 @@ a:hover {
 
 .section__inner li {
   font-family: var(--font-sans);
-  font-weight: 200;
+  font-weight: 300;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--color-text);
@@ -400,27 +397,27 @@ a:hover {
   margin: 0;
 }
 
-.accent-title {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-}
-
-.accent-title::before {
-  content: "";
-  width: 0.18rem;
-  min-height: 1.15em;
-  margin-top: 0.18em;
-  background-color: var(--color-olive);
-  flex-shrink: 0;
-}
-
 .event-meta {
   margin-bottom: 0.15rem;
 }
 
 .event-note {
   margin-top: var(--space-sm);
+}
+
+.note-box {
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  border-radius: var(--border-radius);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-serif);
+  font-size: var(--fs-quote);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+}
+
+.note-box em {
+  font-style: italic;
 }
 
 .section-relative {

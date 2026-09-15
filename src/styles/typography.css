@@ -271,9 +271,10 @@ p em,
 .text-place {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: var(--fs-place);
+  font-style: italic;
+  font-size: var(--fs-small);
   line-height: var(--lh-snug);
-  color: var(--color-text);
+  color: var(--color-text-light);
 }
 
 .text-form {

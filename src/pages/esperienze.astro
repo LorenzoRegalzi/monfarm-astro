@@ -38,9 +38,20 @@ const esperienze = [
     city: 'Ozzano Monferrato (AL)',
     description:
       'Un\'esperienza immersiva nella natura pensata per rallentare, ascoltarsi e lasciare emergere nuove energie. Tra pratiche dolci, condivisione e presenza, “Risveglio e Fioritura” è uno spazio protetto in cui concedersi tempo e trasformazione.',
-    note: 'Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.',
     image: '/images/esperienze/esperienze-3.webp',
     imageAlt: "La Corte Delle 4 Stagioni — Ozzano Monferrato, sede dell'esperienza Risveglio e Fioritura",
+    cta: "Scopri com'è andata",
+    href: 'https://www.instagram.com/monfarmexperience',
+  },
+  {
+    date: 'Giugno 2026',
+    title: '“Splendore – Nel cuore dell\'estate”',
+    location: 'Cascina Baronina',
+    city: 'Roncaglia, Casale Monferrato (AL)',
+    description:
+      'Un\'esperienza immersiva nel cuore dell\'estate, tra natura, movimento e pratiche dedicate alla presenza. Due giorni per rallentare, riconnettersi al corpo e lasciarsi attraversare dalla luce e dall\'energia della stagione, immersi nella quiete del Monferrato.',
+    image: '/images/esperienze/esperienze-4.jpeg',
+    imageAlt: "Cascina Baronina a Roncaglia, sede dell'esperienza Splendore – Nel cuore dell'estate",
     cta: "Scopri com'è andata",
     href: 'https://www.instagram.com/monfarmexperience',
   },
@@ -49,7 +60,7 @@ const esperienze = [
 
 <Layout
   title="Esperienze"
-  description="Le esperienze MonFarm: ritiri immersi nella natura del Monferrato. Le Radici, Rituale d'Inverno, Risveglio e Fioritura."
+  description="Le esperienze MonFarm: ritiri immersi nella natura del Monferrato. Le Radici, Rituale d'Inverno, Risveglio e Fioritura, Splendore."
 >
   <PageHeader title="Esperienze" />
 
@@ -65,11 +76,14 @@ const esperienze = [
         </p>
         <p class="text-body--thin">{exp.description}</p>
         <Button href={exp.href} text={exp.cta} />
-        {exp.note && (
-          <p class="note-box"><em>{exp.note}</em></p>
-        )}
       </Section>
-      <SectionDivider bar={i === esperienze.length - 1} />
+      {i < esperienze.length - 1 && <SectionDivider bar={false} />}
     </>
   ))}
+
+  <SectionDivider bar />
+
+  <Section>
+    <p class="note-box"><em>Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.</em></p>
+  </Section>
 </Layout>

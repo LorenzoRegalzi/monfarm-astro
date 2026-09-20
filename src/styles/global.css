@@ -53,7 +53,6 @@
   --image-short-height: 10.9rem;
   --image-mid-height: 17.4rem;
   --image-tall-height: 23.25rem;
-  --image-round-size: 12.9rem;
   --divider-band-height: 3.25rem;
 }
 
@@ -202,6 +201,10 @@ a:hover {
   color: var(--color-text);
 }
 
+.section-center {
+  position: relative;
+}
+
 .section-center--olive {
   background-color: var(--color-cream);
 }
@@ -246,19 +249,6 @@ a:hover {
   object-position: center 18%;
 }
 
-.full-image--round {
-  width: var(--image-round-size);
-  height: var(--image-round-size);
-  border-radius: 50%;
-  flex-shrink: 0;
-  align-self: center;
-  margin-inline: auto;
-}
-
-.full-image--round img {
-  opacity: 1;
-}
-
 .section-divider__band {
   background-color: var(--color-cream);
   height: var(--divider-band-height);
@@ -268,7 +258,7 @@ a:hover {
   height: 0.35rem;
   width: 2.65rem;
   background-color: var(--color-olive);
-  margin-block: var(--space-sm) 0;
+  margin-block: 0 var(--space-sm);
 }
 
 .btn {
@@ -306,6 +296,7 @@ a:hover {
 .cta-pull {
   position: relative;
   bottom: 2.25rem;
+  margin-bottom: -2.25rem;
 }
 
 .mi-presento {
@@ -318,10 +309,11 @@ a:hover {
 
 .mi-presento__title {
   margin: 0;
+  margin-bottom: -0.6rem;
   text-align: center;
   width: 100%;
   font-weight: 700;
-  font-size: var(--fs-display);
+  font-size: 2.1rem;
 }
 
 .mi-presento__photo {
@@ -330,8 +322,8 @@ a:hover {
   height: auto;
   max-height: none;
   object-fit: contain;
-  background: transparent;
-  opacity: 1;
+  background-color: var(--color-cream);
+  opacity: 0.55;
 }
 
 .mi-presento__info {
@@ -636,7 +628,6 @@ a:hover {
     --fs-title: 1.6rem;
     --fs-display: 1.6rem;
     --space-xl: 2.75rem;
-    --image-round-size: 14rem;
   }
 }
 

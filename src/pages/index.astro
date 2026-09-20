@@ -36,12 +36,13 @@ import Section from '../components/Section.astro';
     <p class="text-display text-display--md text-center">
       Un <em>progetto fatto con cura</em>,<br />non un evento.
     </p>
-    <FullImage
-      src="/images/home/home-2.webp"
-      alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm"
-      round
-    />
   </Section>
+
+  <FullImage
+    src="/images/home/home-2.webp"
+    alt="Piccolo gruppo di persone sedute attorno a un tavolo durante un'esperienza MonFarm"
+    height="var(--image-mid-height)"
+  />
 
   <Section>
     <p>
@@ -62,6 +63,15 @@ import Section from '../components/Section.astro';
 
   <SectionCenter bg="olive-light" align="left">
     <p class="text-display">Un approccio lento,<br />umano<br />e curato.</p>
+    <img
+      src="/images/lotus-light.svg"
+      alt=""
+      class="approccio-lento__flower"
+      width="280"
+      height="211"
+      loading="lazy"
+      aria-hidden="true"
+    />
   </SectionCenter>
 
   <FullImage
@@ -153,3 +163,15 @@ import Section from '../components/Section.astro';
     <Button href="/collabora" text="Collabora" />
   </SectionCenter>
 </Layout>
+
+<style>
+.approccio-lento__flower {
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1rem;
+  width: 11rem;
+  height: auto;
+  opacity: 0.6;
+  pointer-events: none;
+}
+</style>

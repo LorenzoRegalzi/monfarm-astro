@@ -65,6 +65,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -75,6 +76,7 @@ body {
   line-height: var(--lh-body);
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img, picture, video, canvas, svg {
@@ -123,6 +125,10 @@ a:hover {
 .stack--tight p {
   margin: 0;
   line-height: var(--lh-tight);
+}
+
+.anchor {
+  scroll-margin-top: 4.5rem;
 }
 
 .sr-only {
@@ -300,20 +306,23 @@ a:hover {
 }
 
 .mi-presento {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-md);
   width: 100%;
 }
 
-.mi-presento__title {
-  margin: 0;
-  margin-bottom: -0.6rem;
+.mi-presento .mi-presento__title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 -0.5em;
   text-align: center;
   width: 100%;
   font-weight: 700;
-  font-size: 2.1rem;
+  font-size: 2.6rem;
+  font-size: 18cqw;
+  line-height: 1;
 }
 
 .mi-presento__photo {
@@ -331,17 +340,28 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
+  margin-top: var(--space-md);
   text-align: center;
   width: 100%;
 }
 
 .mi-presento__info .text-display {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .mi-presento__role {
   margin: 0;
-  max-width: 16rem;
+  max-width: 18rem;
+  font-size: 1.2rem;
+}
+
+.mi-presento__deco {
+  align-self: flex-end;
+  width: 80%;
+  height: auto;
+  margin-top: var(--space-lg);
+  pointer-events: none;
 }
 
 .build-list {
@@ -388,31 +408,46 @@ a:hover {
   margin: 0;
 }
 
-.event-meta {
-  margin-bottom: 0.15rem;
-}
-
-.event-note {
-  margin-top: var(--space-sm);
-}
-
 .note-box {
+  position: relative;
+  display: block;
   background-color: var(--color-cream);
   color: var(--color-brown);
-  border-radius: var(--border-radius);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-lg) var(--space-md);
   font-family: var(--font-serif);
-  font-size: var(--fs-quote);
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: var(--lh-snug);
+  text-align: center;
+  text-wrap: balance;
+  text-decoration: none;
 }
 
-.note-box em {
-  font-style: italic;
+.note-box::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 1.5rem;
+  width: 2.65rem;
+  height: 0.35rem;
+  background-color: var(--color-olive);
 }
 
-.section-relative {
+.note-box__deco {
+  position: absolute;
+  right: -1.75rem;
+  bottom: -2.5rem;
+  width: 6.5rem;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.note-box__text {
   position: relative;
+  z-index: 1;
+  display: block;
+  font-style: italic;
 }
 
 .prose {

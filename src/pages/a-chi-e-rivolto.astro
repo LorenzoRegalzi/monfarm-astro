@@ -43,7 +43,7 @@ import SectionCenter from '../components/SectionCenter.astro';
       coerenti con i tuoi valori, MonFarm Experience può diventare un partner
       con cui progettare insieme.
     </p>
-    <Button href="/collabora" text="Proponi la tua struttura" />
+    <Button href="/collabora#strutture" text="Proponi la tua struttura" />
   </Section>
 
   <SectionDivider bar={false} />
@@ -68,7 +68,37 @@ import SectionCenter from '../components/SectionCenter.astro';
     <p class="text-body--thin">
       Ogni esperienza nasce dal dialogo e dalla fiducia reciproca.
     </p>
-    <Button href="/collabora" text="Collabora come operatore" />
+    <Button href="/collabora#operatori" text="Collabora come operatore" />
+  </Section>
+
+  <SectionDivider bar={false} />
+
+  <FullImage
+    src="/images/a-chi-e-rivolto/a-chi-5.jpeg"
+    alt="Gruppo di persone che pratica movimento all'aperto sui tappetini al tramonto"
+    height="var(--image-mid-height)"
+    position="center 92%"
+  />
+
+  <Section>
+    <h4 class="text-subsection text-subsection--serif">Per aziende e Team</h4>
+    <p class="text-body--thin">
+      Se cerchi un modo diverso per prenderti cura delle persone che lavorano
+      con te, MonFarm può portare le sue esperienze anche all’interno delle
+      realtà aziendali.
+    </p>
+    <p class="text-body--thin">
+      Organizziamo momenti di pausa, connessione e benessere pensati per gruppi
+      di lavoro: pratiche di movimento e respirazione, esperienze nella natura,
+      attività creative e momenti di condivisione, costruiti in base alle
+      esigenze del team.
+    </p>
+    <p class="text-body--thin">
+      Non il classico team building, ma un’occasione per uscire dalla routine,
+      rallentare e vivere insieme un’esperienza che lasci qualcosa anche dopo
+      essere tornati al lavoro.
+    </p>
+    <Button href="/collabora#aziende" text="Organizza un'esperienza per il tuo team" />
   </Section>
 
   <SectionDivider bar={false} />
@@ -88,9 +118,35 @@ import SectionCenter from '../components/SectionCenter.astro';
     <p class="text-body--thin">
       Le esperienze vengono comunicate di volta in volta attraverso i canali dedicati.
     </p>
-    <p class="text-body--thin">
-      Questo sito non propone prenotazioni o vendite dirette, ma racconta il
-      progetto e le sue collaborazioni.
-    </p>
+    <div class="avviso">
+      <img class="avviso__deco" src="/images/raggi.svg" alt="" width="320" height="340" loading="lazy" aria-hidden="true" />
+      <p class="text-body--thin avviso__text">
+        Questo sito non propone prenotazioni o vendite dirette, ma racconta il
+        progetto e le sue collaborazioni.
+      </p>
+    </div>
   </Section>
 </Layout>
+
+<style>
+.avviso {
+  position: relative;
+}
+
+.avviso__deco {
+  position: absolute;
+  right: calc(-1 * var(--container-padding-inline));
+  bottom: -4.5rem;
+  width: 11rem;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.avviso .avviso__text {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  text-decoration: underline;
+}
+</style>

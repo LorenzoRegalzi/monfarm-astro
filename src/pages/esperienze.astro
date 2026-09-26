@@ -6,6 +6,11 @@ import Button from '../components/Button.astro';
 import FullImage from '../components/FullImage.astro';
 import SectionDivider from '../components/SectionDivider.astro';
 
+const diarioHref = 'https://www.instagram.com/stories/highlights/18080965583315408/';
+
+const mapsHref = (place: string, city: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place} ${city}`)}`;
+
 const esperienze = [
   {
     date: 'Ottobre 2025',
@@ -17,7 +22,7 @@ const esperienze = [
     image: '/images/esperienze/esperienze-1.webp',
     imageAlt: "Gruppo di persone in cerchio al tramonto durante l'Evento Pilota Le Radici",
     cta: "Scopri com'è andata",
-    href: 'https://www.instagram.com/monfarmexperience',
+    href: 'https://www.instagram.com/stories/highlights/18080965583315408/',
   },
   {
     date: 'Dicembre 2025',
@@ -29,7 +34,7 @@ const esperienze = [
     image: '/images/esperienze/esperienze-2.webp',
     imageAlt: "Candela e oggetti sul pavimento durante il Rituale d'Inverno a Belvedere Monferrato",
     cta: "Scopri com'è andata",
-    href: 'https://www.instagram.com/monfarmexperience',
+    href: 'https://www.instagram.com/stories/highlights/18122420104541354/',
   },
   {
     date: 'Aprile 2026',
@@ -41,7 +46,7 @@ const esperienze = [
     image: '/images/esperienze/esperienze-3.webp',
     imageAlt: "La Corte Delle 4 Stagioni — Ozzano Monferrato, sede dell'esperienza Risveglio e Fioritura",
     cta: "Scopri com'è andata",
-    href: 'https://www.instagram.com/monfarmexperience',
+    href: 'https://www.instagram.com/stories/highlights/18113576392660328/',
   },
   {
     date: 'Giugno 2026',
@@ -53,26 +58,43 @@ const esperienze = [
     image: '/images/esperienze/esperienze-4.jpeg',
     imageAlt: "Cascina Baronina a Roncaglia, sede dell'esperienza Splendore – Nel cuore dell'estate",
     cta: "Scopri com'è andata",
-    href: 'https://www.instagram.com/monfarmexperience',
+    href: 'https://www.instagram.com/stories/highlights/18161383123393750/',
+  },
+  {
+    date: 'Ottobre 2026',
+    title: '“RACCOLTO — Corpo, creatività e convivialità nel tempo d’autunno”',
+    location: 'Borgo Ramezzana Country House',
+    city: 'Trino (VC)',
+    description:
+      'Una mattina per rallentare, tornare al corpo e fare spazio all’essenziale. Tra movimento, creatività e convivialità, abbiamo raccolto ciò che ci nutre, ciò che resta e ciò che possiamo lasciare andare, accompagnati dai colori e dai ritmi dell’autunno.',
+    cta: "Scopri com'è andata",
+    href: 'https://www.instagram.com/stories/highlights/18096060722533472/',
   },
 ];
 ---
 
 <Layout
   title="Esperienze"
-  description="Le esperienze MonFarm: ritiri immersi nella natura del Monferrato. Le Radici, Rituale d'Inverno, Risveglio e Fioritura, Splendore."
+  description="Le esperienze MonFarm: ritiri immersi nella natura del Monferrato. Le Radici, Rituale d'Inverno, Risveglio e Fioritura, Splendore, Raccolto."
 >
   <PageHeader title="Esperienze" />
 
   {esperienze.map((exp, i) => (
     <>
-      <FullImage src={exp.image} alt={exp.imageAlt} height="var(--image-mid-height)" />
+      {exp.image && <FullImage src={exp.image} alt={exp.imageAlt} height="var(--image-mid-height)" />}
       <Section>
         <p class="text-date">{exp.date}</p>
         <p class="text-event-title">{exp.title}</p>
         <p class="text-place">
-          {exp.location}<br />
-          {exp.city}
+          <a
+            href={mapsHref(exp.location, exp.city)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Apri ${exp.location} su Google Maps`}
+          >
+            {exp.location}<br />
+            {exp.city}
+          </a>
         </p>
         <p class="text-body--thin">{exp.description}</p>
         <Button href={exp.href} text={exp.cta} />
@@ -81,9 +103,10 @@ const esperienze = [
     </>
   ))}
 
-  <SectionDivider bar />
-
   <Section>
-    <p class="note-box"><em>Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.</em></p>
+    <a class="note-box" href={diarioHref} target="_blank" rel="noopener noreferrer">
+      <img class="note-box__deco" src="/images/diario.svg" alt="" width="302" height="302" loading="lazy" aria-hidden="true" />
+      <em class="note-box__text">Sfoglia il nostro diario visivo in attesa di incontrarci dal vivo.</em>
+    </a>
   </Section>
 </Layout>

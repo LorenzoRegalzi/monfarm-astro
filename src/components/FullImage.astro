@@ -3,6 +3,7 @@ interface Props {
   src: string;
   alt: string;
   height?: string;
+  position?: string;
   portrait?: boolean;
   solid?: boolean;
   loading?: 'lazy' | 'eager';
@@ -12,6 +13,7 @@ const {
   src,
   alt,
   height,
+  position,
   portrait = false,
   solid = false,
   loading = 'lazy',
@@ -34,5 +36,6 @@ const resolvedHeight = portrait ? undefined : (height ?? 'var(--image-wide-heigh
     alt={alt}
     loading={loading}
     decoding="async"
+    style={position ? `object-position: ${position};` : undefined}
   />
 </div>

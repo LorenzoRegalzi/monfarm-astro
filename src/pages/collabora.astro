@@ -16,6 +16,30 @@ const profili = [
   'Esploratori della natura (esperti di foraging, botanica, erboristeria o guide capaci di far leggere il bosco e le stagioni)',
   'Artigiani o esperti di pratiche manuali lente (ceramica, tessitura, legatoria naturale) in cui il processo conta più del risultato finale',
 ];
+
+const proposteAziende = [
+  'Esperienze nella natura',
+  'Movimento, yoga e pratiche di respirazione',
+  'Attività creative ed espressive',
+  'Journaling e pratiche di consapevolezza',
+  'Esperienze legate al territorio e alla stagionalità',
+  'Momenti di condivisione e convivialità',
+];
+
+const passaggiAziende = [
+  {
+    title: '01 — Ci raccontiamo',
+    text: 'Partiamo dalle esigenze del team, dal numero di partecipanti e dal tipo di esperienza che avete in mente.',
+  },
+  {
+    title: '02 — Progettiamo',
+    text: 'Costruiamo insieme un’esperienza coerente con le persone, il tempo a disposizione e il luogo.',
+  },
+  {
+    title: '03 — Viviamo l’esperienza',
+    text: 'MonFarm si occupa di coordinare il percorso e le professionalità coinvolte, per accompagnare il gruppo dall’inizio alla fine.',
+  },
+];
 ---
 
 <Layout
@@ -35,59 +59,112 @@ const profili = [
     </p>
   </SectionCenter>
 
-  <FullImage
-    src="/images/collabora/collabora-1.webp"
-    alt="Tavola apparecchiata all'aperto sotto un ombrellone, atmosfera curata"
-    height="var(--image-mid-height)"
-  />
+  <div id="strutture" class="anchor">
+    <FullImage
+      src="/images/collabora/collabora-1.webp"
+      alt="Tavola apparecchiata all'aperto sotto un ombrellone, atmosfera curata"
+      height="var(--image-mid-height)"
+    />
 
-  <Section>
-    <h4 class="text-subsection text-subsection--serif">Collaborazioni con strutture</h4>
-    <p class="text-body--thin">
-      Cerco luoghi immersi nella natura che desiderino accogliere ritiri e
-      giornate curate, intime e rispettose dei ritmi di ogni stagione.
-      Per me, una collaborazione non è mai il semplice ‘affitto di uno spazio’.
-      È una progettazione <strong>condivisa</strong>.
-    </p>
+    <Section>
+      <h4 class="text-subsection text-subsection--serif">Collaborazioni con strutture</h4>
+      <p class="text-body--thin">
+        Cerco luoghi immersi nella natura che desiderino accogliere ritiri e
+        giornate curate, intime e rispettose dei ritmi di ogni stagione.
+        Per me, una collaborazione non è mai il semplice ‘affitto di uno spazio’.
+        È una progettazione <strong>condivisa</strong>.
+      </p>
 
-    <h4 class="text-subsection">Cosa offre MonFarm Experience</h4>
-    <ul>
-      <li>Ideazione e cura del format</li>
-      <li>Selezione degli operatori</li>
-      <li>Composizione del gruppo</li>
-      <li>Comunicazione poetica e coerente</li>
-    </ul>
+      <h4 class="text-subsection">Cosa offre MonFarm Experience</h4>
+      <ul>
+        <li>Ideazione e cura del format</li>
+        <li>Selezione degli operatori</li>
+        <li>Composizione del gruppo</li>
+        <li>Comunicazione poetica e coerente</li>
+      </ul>
 
-    <h4 class="text-subsection">Cosa chiedo alla struttura</h4>
-    <ul>
-      <li>Spazi adatti a piccoli gruppi</li>
-      <li>Ospitalità genuina e calore</li>
-      <li>Coerenza valoriale</li>
-    </ul>
-  </Section>
+      <h4 class="text-subsection">Cosa chiedo alla struttura</h4>
+      <ul>
+        <li>Spazi adatti a piccoli gruppi</li>
+        <li>Ospitalità genuina e calore</li>
+        <li>Coerenza valoriale</li>
+      </ul>
+    </Section>
+  </div>
 
-  <FullImage
-    src="/images/collabora/collabora-2.webp"
-    alt="Musicista con arpa in un prato durante un'esperienza MonFarm"
-    height="var(--image-mid-height)"
-  />
+  <div id="operatori" class="anchor">
+    <FullImage
+      src="/images/collabora/collabora-2.webp"
+      alt="Musicista con arpa in un prato durante un'esperienza MonFarm"
+      height="var(--image-mid-height)"
+    />
 
-  <Section>
-    <h4 class="text-subsection text-subsection--serif">Collaborazioni con operatori e facilitatori</h4>
-    <p class="text-body--thin">
-      Cerco professionisti che lavorino con presenza e profondità, in piccoli
-      gruppi e con un <strong>approccio umano</strong>, non performativo.
-      Ogni esperienza nasce dal dialogo: non si tratta di inserire una singola
-      pratica in un programma, ma di co-creare un percorso armonico.
-    </p>
+    <Section>
+      <h4 class="text-subsection text-subsection--serif">Collaborazioni con operatori e facilitatori</h4>
+      <p class="text-body--thin">
+        Cerco professionisti che lavorino con presenza e profondità, in piccoli
+        gruppi e con un <strong>approccio umano</strong>, non performativo.
+        Ogni esperienza nasce dal dialogo: non si tratta di inserire una singola
+        pratica in un programma, ma di co-creare un percorso armonico.
+      </p>
 
-    <h4 class="text-subsection">Profili ricercati</h4>
-    <ul>
-      {profili.map((item) => (
-        <li>{item}</li>
+      <h4 class="text-subsection">Profili ricercati</h4>
+      <ul>
+        {profili.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </Section>
+  </div>
+
+  <div id="aziende" class="anchor">
+    <FullImage
+      src="/images/collabora/collabora-4.jpeg"
+      alt="Persone sdraiate sui tappetini in un prato con le colline sullo sfondo"
+      height="var(--image-mid-height)"
+      position="center 72%"
+    />
+
+    <Section>
+      <h4 class="text-subsection text-subsection--serif">Collaborazioni con aziende e team</h4>
+      <p class="text-body--thin">
+        Credo che prendersi cura delle persone che lavorano insieme significhi
+        anche creare spazio per fermarsi, respirare e incontrarsi fuori dai ritmi
+        quotidiani.
+      </p>
+      <p class="text-body--thin">
+        MonFarm Experience progetta esperienze per aziende e piccoli gruppi di
+        lavoro che desiderano vivere un momento diverso: nella natura, attraverso
+        il movimento, la creatività, la consapevolezza e la condivisione.
+      </p>
+      <p class="text-body--thin">
+        Ogni esperienza viene costruita in dialogo con l’azienda, a partire dalle
+        esigenze del gruppo, dal tempo a disposizione e dal luogo scelto. Possiamo
+        progettare una giornata, un momento di team building o un’esperienza più
+        immersiva, coinvolgendo operatori e professionisti selezionati in base
+        all’obiettivo.
+      </p>
+      <p class="text-body--thin">
+        Non format preconfezionati, ma esperienze pensate per far stare bene le
+        persone insieme.
+      </p>
+
+      <h4 class="text-subsection">Cosa possiamo progettare insieme</h4>
+      <ul>
+        {proposteAziende.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+
+      <h4 class="text-subsection">Come funziona</h4>
+      {passaggiAziende.map((step) => (
+        <>
+          <h4 class="text-subsection">{step.title}</h4>
+          <p class="text-body--thin">{step.text}</p>
+        </>
       ))}
-    </ul>
-  </Section>
+    </Section>
+  </div>
 
   <FullImage
     src="/images/collabora/collabora-3.webp"

@@ -27,7 +27,8 @@ export const POST: APIRoute = async ({ request }) => {
   const motivoLabel: Record<string, string> = {
     'struttura-location':    'Struttura / Location',
     'operatore-insegnante':  'Operatore / Insegnante',
-    'partecipare':           'Vorrei partecipare',
+    'azienda-team-building': 'Azienda / Team building',
+    'partecipare':          'Vorrei partecipare',
     'altro':                 'Altro',
   };
 

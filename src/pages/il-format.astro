@@ -122,6 +122,15 @@ const buildSteps = [
         <p class="text-display text-display--md">Beatrice Furia</p>
         <p class="text-body--thin mi-presento__role">Fondatrice e curatrice di MonFarm Experience.</p>
       </div>
+      <img
+        class="mi-presento__deco"
+        src="/images/unapprocciolento.svg"
+        alt=""
+        width="549"
+        height="131"
+        loading="lazy"
+        aria-hidden="true"
+      />
     </div>
   </Section>
 
@@ -143,9 +152,36 @@ const buildSteps = [
   <SectionDivider />
 
   <SectionCenter>
-    <p class="text-intro">
+    <div class="invito__deco" aria-hidden="true">
+      <img src="/images/relazione.svg" alt="" width="323" height="362" loading="lazy" />
+    </div>
+    <p class="text-intro invito__text">
       <em>MonFarm Experience è un invito a progettare insieme spazi di qualità,
       in cui la relazione diventa il cuore dell'esperienza.</em>
     </p>
   </SectionCenter>
 </Layout>
+
+<style>
+.invito__deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.invito__deco img {
+  position: absolute;
+  right: -12%;
+  bottom: -22%;
+  width: min(62%, 22rem);
+  height: auto;
+}
+
+.invito__text {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 7rem;
+}
+</style>

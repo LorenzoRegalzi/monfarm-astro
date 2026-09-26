@@ -64,11 +64,11 @@ import Section from '../components/Section.astro';
   <SectionCenter bg="olive-light" align="left">
     <p class="text-display">Un approccio lento,<br />umano<br />e curato.</p>
     <img
-      src="/images/lotus-light.svg"
+      src="/images/unapprocciolento.svg"
       alt=""
       class="approccio-lento__flower"
-      width="280"
-      height="211"
+      width="549"
+      height="131"
       loading="lazy"
       aria-hidden="true"
     />
@@ -167,11 +167,10 @@ import Section from '../components/Section.astro';
 <style>
 .approccio-lento__flower {
   position: absolute;
-  right: -1.5rem;
-  bottom: -1rem;
-  width: 11rem;
+  right: 0;
+  bottom: var(--space-sm);
+  width: min(62%, 24rem);
   height: auto;
-  opacity: 0.6;
   pointer-events: none;
 }
 </style>
